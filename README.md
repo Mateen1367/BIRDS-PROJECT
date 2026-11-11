@@ -97,9 +97,15 @@ birds-project/
 │   └── 02_modeling_and_evaluation.ipynb  # baseline → transfer learning → tuning → evaluation   ✅
 ├── src/
 │   ├── download_data.sh              # downloads only our 10 species
-│   └── add_nb2_interpretations.py    # writes the "What this shows" notes into notebook 2
+│   ├── add_nb2_interpretations.py    # writes the "What this shows" notes into notebook 2
+│   ├── deck_content.py               # speaker script: SAY / WHY / IF ASKED for every slide
+│   ├── build_deck.py                 # builds the PowerPoint from results.json + deck_content.py
+│   └── build_scripts.py              # builds the speaker-script PDF and Word file
 ├── models/                  # saved final model (not in git; recreated by notebook 2)
 ├── reports/
+│   ├── WhichTexasBird_Presentation.pptx      # 21 slides + 2 backup, with speaker notes
+│   ├── WhichTexasBird_Speaker_Scripts.pdf    # Say / Why / If-asked for each speaker
+│   ├── WhichTexasBird_Speaker_Scripts.docx   # same, editable
 │   ├── results.json         # every number used in the slides
 │   └── figures/             # charts used in the slides
 └── docs/
@@ -115,6 +121,8 @@ pip install -r requirements.txt
 bash src/download_data.sh          # ~2 GB stream, keeps ~48 MB of images
 ```
 Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_modeling_and_evaluation.ipynb` (about 25 minutes on a laptop CPU; the notebook limits TensorFlow to 4 threads).
+
+To rebuild the slides and scripts after rerunning the notebooks: `python src/build_deck.py` and `python src/build_scripts.py`.
 
 > **Windows note:** if `import tensorflow` fails with *"DLL load failed … _pywrap_tensorflow_internal"*, your Visual C++ runtime is out of date. Run `pip install msvc-runtime` (or install the latest Microsoft Visual C++ Redistributable).
 
