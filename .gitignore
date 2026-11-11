@@ -1,0 +1,6 @@
+# raw download is re-created by src/download_data.sh
+data/raw/
+*.tar.gz
+models/*.keras
+.ipynb_checkpoints/
+__pycache__/
