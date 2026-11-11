@@ -1,0 +1,1711 @@
+path,species,split
+../data/raw/train/COMMON GRACKLE/001.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/002.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/003.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/004.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/005.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/006.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/007.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/008.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/009.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/010.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/011.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/012.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/013.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/014.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/015.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/016.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/017.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/018.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/019.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/020.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/021.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/022.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/023.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/024.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/025.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/026.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/027.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/028.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/029.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/030.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/031.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/032.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/033.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/034.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/035.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/036.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/037.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/038.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/039.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/040.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/041.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/042.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/043.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/044.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/045.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/046.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/047.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/048.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/049.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/050.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/051.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/052.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/053.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/054.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/055.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/056.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/057.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/058.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/059.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/060.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/061.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/062.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/063.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/064.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/065.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/066.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/067.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/068.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/069.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/070.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/071.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/072.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/073.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/074.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/075.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/076.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/077.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/078.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/079.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/080.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/081.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/082.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/083.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/084.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/085.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/086.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/087.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/088.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/089.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/090.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/091.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/092.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/093.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/094.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/095.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/096.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/097.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/098.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/099.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/100.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/101.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/102.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/103.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/104.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/105.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/106.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/107.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/108.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/109.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/110.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/111.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/112.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/113.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/114.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/115.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/116.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/117.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/118.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/119.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/120.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/121.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/122.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/123.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/124.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/125.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/126.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/127.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/128.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/129.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/130.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/131.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/132.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/133.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/134.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/135.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/136.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/137.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/138.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/139.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/140.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/141.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/142.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/143.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/144.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/145.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/146.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/147.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/148.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/149.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/150.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/151.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/152.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/153.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/154.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/155.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/156.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/157.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/158.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/159.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/160.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/161.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/162.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/163.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/164.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/165.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/166.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/167.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/168.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/169.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/170.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/171.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/172.jpg,Common Grackle,test
+../data/raw/train/COMMON GRACKLE/173.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/174.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/175.jpg,Common Grackle,train
+../data/raw/train/COMMON GRACKLE/176.jpg,Common Grackle,val
+../data/raw/train/COMMON GRACKLE/177.jpg,Common Grackle,train
+../data/raw/train/CROW/001.jpg,Crow,train
+../data/raw/train/CROW/002.jpg,Crow,test
+../data/raw/train/CROW/003.jpg,Crow,val
+../data/raw/train/CROW/004.jpg,Crow,train
+../data/raw/train/CROW/005.jpg,Crow,train
+../data/raw/train/CROW/006.jpg,Crow,train
+../data/raw/train/CROW/007.jpg,Crow,val
+../data/raw/train/CROW/008.jpg,Crow,train
+../data/raw/train/CROW/009.jpg,Crow,train
+../data/raw/train/CROW/010.jpg,Crow,train
+../data/raw/train/CROW/011.jpg,Crow,val
+../data/raw/train/CROW/012.jpg,Crow,test
+../data/raw/train/CROW/013.jpg,Crow,train
+../data/raw/train/CROW/014.jpg,Crow,train
+../data/raw/train/CROW/015.jpg,Crow,train
+../data/raw/train/CROW/016.jpg,Crow,val
+../data/raw/train/CROW/017.jpg,Crow,train
+../data/raw/train/CROW/018.jpg,Crow,train
+../data/raw/train/CROW/019.jpg,Crow,train
+../data/raw/train/CROW/020.jpg,Crow,train
+../data/raw/train/CROW/021.jpg,Crow,train
+../data/raw/train/CROW/022.jpg,Crow,train
+../data/raw/train/CROW/023.jpg,Crow,train
+../data/raw/train/CROW/024.jpg,Crow,val
+../data/raw/train/CROW/025.jpg,Crow,train
+../data/raw/train/CROW/026.jpg,Crow,train
+../data/raw/train/CROW/027.jpg,Crow,train
+../data/raw/train/CROW/028.jpg,Crow,train
+../data/raw/train/CROW/029.jpg,Crow,train
+../data/raw/train/CROW/030.jpg,Crow,train
+../data/raw/train/CROW/031.jpg,Crow,train
+../data/raw/train/CROW/032.jpg,Crow,train
+../data/raw/train/CROW/033.jpg,Crow,train
+../data/raw/train/CROW/034.jpg,Crow,train
+../data/raw/train/CROW/035.jpg,Crow,train
+../data/raw/train/CROW/036.jpg,Crow,train
+../data/raw/train/CROW/037.jpg,Crow,train
+../data/raw/train/CROW/038.jpg,Crow,val
+../data/raw/train/CROW/039.jpg,Crow,test
+../data/raw/train/CROW/040.jpg,Crow,train
+../data/raw/train/CROW/041.jpg,Crow,train
+../data/raw/train/CROW/042.jpg,Crow,val
+../data/raw/train/CROW/043.jpg,Crow,train
+../data/raw/train/CROW/044.jpg,Crow,train
+../data/raw/train/CROW/045.jpg,Crow,train
+../data/raw/train/CROW/046.jpg,Crow,train
+../data/raw/train/CROW/047.jpg,Crow,train
+../data/raw/train/CROW/048.jpg,Crow,train
+../data/raw/train/CROW/049.jpg,Crow,train
+../data/raw/train/CROW/050.jpg,Crow,train
+../data/raw/train/CROW/051.jpg,Crow,train
+../data/raw/train/CROW/052.jpg,Crow,test
+../data/raw/train/CROW/053.jpg,Crow,val
+../data/raw/train/CROW/054.jpg,Crow,test
+../data/raw/train/CROW/055.jpg,Crow,train
+../data/raw/train/CROW/056.jpg,Crow,train
+../data/raw/train/CROW/057.jpg,Crow,train
+../data/raw/train/CROW/058.jpg,Crow,train
+../data/raw/train/CROW/059.jpg,Crow,train
+../data/raw/train/CROW/060.jpg,Crow,train
+../data/raw/train/CROW/061.jpg,Crow,train
+../data/raw/train/CROW/062.jpg,Crow,train
+../data/raw/train/CROW/063.jpg,Crow,train
+../data/raw/train/CROW/064.jpg,Crow,train
+../data/raw/train/CROW/065.jpg,Crow,train
+../data/raw/train/CROW/066.jpg,Crow,train
+../data/raw/train/CROW/067.jpg,Crow,train
+../data/raw/train/CROW/068.jpg,Crow,val
+../data/raw/train/CROW/069.jpg,Crow,test
+../data/raw/train/CROW/070.jpg,Crow,test
+../data/raw/train/CROW/071.jpg,Crow,train
+../data/raw/train/CROW/072.jpg,Crow,train
+../data/raw/train/CROW/073.jpg,Crow,train
+../data/raw/train/CROW/074.jpg,Crow,train
+../data/raw/train/CROW/075.jpg,Crow,train
+../data/raw/train/CROW/076.jpg,Crow,train
+../data/raw/train/CROW/077.jpg,Crow,train
+../data/raw/train/CROW/078.jpg,Crow,train
+../data/raw/train/CROW/079.jpg,Crow,train
+../data/raw/train/CROW/080.jpg,Crow,train
+../data/raw/train/CROW/081.jpg,Crow,test
+../data/raw/train/CROW/082.jpg,Crow,val
+../data/raw/train/CROW/083.jpg,Crow,train
+../data/raw/train/CROW/084.jpg,Crow,train
+../data/raw/train/CROW/085.jpg,Crow,train
+../data/raw/train/CROW/086.jpg,Crow,train
+../data/raw/train/CROW/087.jpg,Crow,val
+../data/raw/train/CROW/088.jpg,Crow,train
+../data/raw/train/CROW/089.jpg,Crow,train
+../data/raw/train/CROW/090.jpg,Crow,val
+../data/raw/train/CROW/091.jpg,Crow,train
+../data/raw/train/CROW/092.jpg,Crow,train
+../data/raw/train/CROW/093.jpg,Crow,val
+../data/raw/train/CROW/094.jpg,Crow,train
+../data/raw/train/CROW/095.jpg,Crow,train
+../data/raw/train/CROW/096.jpg,Crow,val
+../data/raw/train/CROW/097.jpg,Crow,val
+../data/raw/train/CROW/098.jpg,Crow,test
+../data/raw/train/CROW/099.jpg,Crow,val
+../data/raw/train/CROW/100.jpg,Crow,train
+../data/raw/train/CROW/101.jpg,Crow,test
+../data/raw/train/CROW/102.jpg,Crow,train
+../data/raw/train/CROW/103.jpg,Crow,train
+../data/raw/train/CROW/104.jpg,Crow,test
+../data/raw/train/CROW/105.jpg,Crow,train
+../data/raw/train/CROW/106.jpg,Crow,train
+../data/raw/train/CROW/107.jpg,Crow,train
+../data/raw/train/CROW/108.jpg,Crow,train
+../data/raw/train/CROW/109.jpg,Crow,train
+../data/raw/train/CROW/110.jpg,Crow,train
+../data/raw/train/CROW/111.jpg,Crow,train
+../data/raw/train/CROW/112.jpg,Crow,test
+../data/raw/train/CROW/113.jpg,Crow,test
+../data/raw/train/CROW/114.jpg,Crow,train
+../data/raw/train/CROW/115.jpg,Crow,train
+../data/raw/train/CROW/116.jpg,Crow,test
+../data/raw/train/CROW/117.jpg,Crow,train
+../data/raw/train/CROW/118.jpg,Crow,train
+../data/raw/train/CROW/119.jpg,Crow,train
+../data/raw/train/CROW/120.jpg,Crow,train
+../data/raw/train/CROW/121.jpg,Crow,val
+../data/raw/train/CROW/122.jpg,Crow,train
+../data/raw/train/CROW/123.jpg,Crow,val
+../data/raw/train/CROW/124.jpg,Crow,test
+../data/raw/train/CROW/125.jpg,Crow,train
+../data/raw/train/CROW/126.jpg,Crow,test
+../data/raw/train/CROW/127.jpg,Crow,train
+../data/raw/train/CROW/128.jpg,Crow,test
+../data/raw/train/CROW/129.jpg,Crow,test
+../data/raw/train/CROW/130.jpg,Crow,test
+../data/raw/train/CROW/131.jpg,Crow,test
+../data/raw/train/CROW/132.jpg,Crow,train
+../data/raw/train/CROW/133.jpg,Crow,train
+../data/raw/train/CROW/134.jpg,Crow,train
+../data/raw/train/CROW/135.jpg,Crow,train
+../data/raw/train/CROW/136.jpg,Crow,train
+../data/raw/train/CROW/137.jpg,Crow,train
+../data/raw/train/CROW/138.jpg,Crow,train
+../data/raw/train/CROW/139.jpg,Crow,val
+../data/raw/train/CROW/140.jpg,Crow,train
+../data/raw/train/CROW/141.jpg,Crow,train
+../data/raw/train/CROW/142.jpg,Crow,train
+../data/raw/train/CROW/143.jpg,Crow,test
+../data/raw/train/CROW/144.jpg,Crow,val
+../data/raw/train/CROW/145.jpg,Crow,test
+../data/raw/train/CROW/146.jpg,Crow,test
+../data/raw/train/CROW/147.jpg,Crow,test
+../data/raw/train/CROW/148.jpg,Crow,val
+../data/raw/train/CROW/149.jpg,Crow,train
+../data/raw/train/CROW/150.jpg,Crow,train
+../data/raw/train/CROW/151.jpg,Crow,train
+../data/raw/train/CROW/152.jpg,Crow,train
+../data/raw/train/CROW/153.jpg,Crow,train
+../data/raw/train/CROW/154.jpg,Crow,train
+../data/raw/train/CROW/155.jpg,Crow,train
+../data/raw/train/CROW/156.jpg,Crow,train
+../data/raw/train/CROW/157.jpg,Crow,train
+../data/raw/train/CROW/158.jpg,Crow,train
+../data/raw/train/CROW/159.jpg,Crow,val
+../data/raw/train/CROW/160.jpg,Crow,train
+../data/raw/train/CROW/161.jpg,Crow,train
+../data/raw/train/CROW/162.jpg,Crow,val
+../data/raw/train/CROW/163.jpg,Crow,train
+../data/raw/train/GREEN JAY/001.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/002.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/003.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/004.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/005.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/006.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/007.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/008.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/009.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/010.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/011.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/012.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/013.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/014.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/015.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/016.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/017.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/018.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/019.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/020.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/021.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/022.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/023.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/024.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/025.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/026.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/027.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/028.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/029.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/030.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/031.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/032.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/033.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/034.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/035.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/036.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/037.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/038.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/039.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/040.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/041.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/042.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/043.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/044.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/045.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/046.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/047.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/048.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/049.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/050.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/051.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/052.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/053.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/054.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/055.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/056.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/057.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/058.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/059.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/060.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/061.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/062.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/063.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/064.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/065.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/066.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/067.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/068.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/069.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/070.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/071.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/072.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/073.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/074.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/075.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/076.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/077.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/078.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/079.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/080.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/081.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/082.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/083.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/084.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/085.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/086.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/087.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/088.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/089.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/090.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/091.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/092.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/093.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/094.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/095.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/096.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/097.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/098.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/099.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/100.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/101.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/102.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/103.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/104.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/105.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/106.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/107.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/108.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/109.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/110.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/111.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/112.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/113.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/114.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/115.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/116.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/117.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/118.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/119.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/120.jpg,Green Jay,test
+../data/raw/train/GREEN JAY/121.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/122.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/123.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/124.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/125.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/126.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/127.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/128.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/129.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/130.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/131.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/132.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/133.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/134.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/135.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/136.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/137.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/138.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/139.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/140.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/141.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/142.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/143.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/144.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/145.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/146.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/147.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/148.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/149.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/150.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/151.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/152.jpg,Green Jay,val
+../data/raw/train/GREEN JAY/153.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/154.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/155.jpg,Green Jay,train
+../data/raw/train/GREEN JAY/156.jpg,Green Jay,train
+../data/raw/train/MOURNING DOVE/001.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/002.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/003.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/004.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/005.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/006.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/007.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/008.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/009.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/010.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/011.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/012.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/013.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/014.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/015.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/016.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/017.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/018.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/019.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/020.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/021.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/022.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/023.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/024.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/025.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/026.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/027.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/028.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/029.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/030.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/031.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/032.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/033.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/034.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/035.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/036.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/037.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/038.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/039.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/040.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/041.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/042.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/043.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/044.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/045.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/046.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/047.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/048.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/049.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/050.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/051.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/052.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/053.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/054.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/055.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/056.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/057.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/058.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/059.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/060.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/061.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/062.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/063.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/064.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/065.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/066.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/067.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/068.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/069.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/070.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/071.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/072.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/073.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/074.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/075.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/076.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/077.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/078.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/079.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/080.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/081.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/082.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/083.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/084.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/085.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/086.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/087.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/088.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/089.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/090.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/091.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/092.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/093.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/094.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/095.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/096.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/097.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/098.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/099.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/100.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/101.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/102.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/103.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/104.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/105.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/106.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/107.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/108.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/109.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/110.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/111.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/112.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/113.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/114.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/115.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/116.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/117.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/118.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/119.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/120.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/121.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/122.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/123.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/124.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/125.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/126.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/127.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/128.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/129.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/130.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/131.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/132.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/133.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/134.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/135.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/136.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/137.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/138.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/139.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/140.jpg,Mourning Dove,val
+../data/raw/train/MOURNING DOVE/141.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/142.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/143.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/144.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/145.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/146.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/147.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/148.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/149.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/150.jpg,Mourning Dove,train
+../data/raw/train/MOURNING DOVE/151.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/152.jpg,Mourning Dove,test
+../data/raw/train/MOURNING DOVE/153.jpg,Mourning Dove,train
+../data/raw/train/NORTHERN CARDINAL/001.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/002.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/003.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/004.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/005.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/006.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/007.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/008.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/009.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/010.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/011.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/012.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/013.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/014.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/015.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/016.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/017.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/018.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/019.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/020.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/021.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/022.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/023.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/024.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/025.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/026.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/027.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/028.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/029.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/030.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/031.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/032.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/033.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/034.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/035.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/036.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/037.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/038.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/039.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/040.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/041.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/042.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/043.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/044.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/045.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/046.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/047.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/048.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/049.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/050.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/051.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/052.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/053.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/054.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/055.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/056.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/057.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/058.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/059.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/060.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/061.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/062.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/063.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/064.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/065.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/066.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/067.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/068.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/069.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/070.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/071.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/072.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/073.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/074.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/075.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/076.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/077.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/078.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/079.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/080.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/081.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/082.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/083.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/084.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/085.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/086.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/087.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/088.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/089.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/090.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/091.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/092.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/093.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/094.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/095.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/096.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/097.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/098.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/099.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/100.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/101.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/102.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/103.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/104.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/105.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/106.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/107.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/108.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/109.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/110.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/111.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/112.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/113.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/114.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/115.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/116.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/117.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/118.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/119.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/120.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/121.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/122.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/123.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/124.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/125.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/126.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/127.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/128.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/129.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/130.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/131.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/132.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/133.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/134.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/135.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/136.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/137.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/138.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/139.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/140.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/141.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/142.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/143.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/144.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/145.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/146.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/147.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/148.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/149.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/150.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/151.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/152.jpg,Northern Cardinal,test
+../data/raw/train/NORTHERN CARDINAL/153.jpg,Northern Cardinal,val
+../data/raw/train/NORTHERN CARDINAL/154.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN CARDINAL/155.jpg,Northern Cardinal,train
+../data/raw/train/NORTHERN MOCKINGBIRD/001.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/002.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/003.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/004.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/005.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/006.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/007.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/008.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/009.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/010.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/011.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/012.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/013.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/014.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/015.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/016.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/017.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/018.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/019.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/020.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/021.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/022.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/023.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/025.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/026.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/027.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/028.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/029.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/030.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/031.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/032.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/033.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/034.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/035.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/036.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/037.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/038.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/039.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/040.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/041.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/042.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/043.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/044.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/045.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/046.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/047.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/048.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/049.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/050.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/051.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/052.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/053.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/054.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/055.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/056.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/057.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/058.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/059.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/060.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/061.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/062.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/063.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/064.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/065.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/066.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/067.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/068.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/069.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/070.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/071.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/072.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/073.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/074.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/075.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/076.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/077.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/078.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/079.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/080.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/081.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/082.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/083.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/084.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/085.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/086.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/087.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/088.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/089.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/090.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/091.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/092.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/093.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/094.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/095.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/096.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/097.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/098.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/099.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/100.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/101.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/102.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/103.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/104.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/105.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/106.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/107.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/108.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/109.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/110.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/111.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/112.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/113.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/114.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/115.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/116.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/117.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/118.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/119.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/120.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/121.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/122.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/123.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/124.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/125.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/126.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/127.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/128.jpg,Northern Mockingbird,test
+../data/raw/train/NORTHERN MOCKINGBIRD/129.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/130.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/131.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/132.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/133.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/134.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/135.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/136.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/137.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/138.jpg,Northern Mockingbird,val
+../data/raw/train/NORTHERN MOCKINGBIRD/139.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/140.jpg,Northern Mockingbird,train
+../data/raw/train/NORTHERN MOCKINGBIRD/141.jpg,Northern Mockingbird,train
+../data/raw/train/RED SHOULDERED HAWK/001.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/002.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/003.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/004.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/005.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/006.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/007.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/008.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/009.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/010.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/011.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/012.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/013.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/014.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/015.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/016.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/017.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/018.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/019.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/020.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/021.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/022.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/023.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/024.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/025.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/026.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/027.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/028.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/029.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/030.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/031.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/032.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/033.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/034.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/035.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/036.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/037.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/038.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/039.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/040.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/041.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/042.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/043.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/044.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/045.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/046.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/047.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/048.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/049.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/050.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/051.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/052.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/053.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/054.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/055.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/056.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/057.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/058.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/059.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/060.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/061.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/062.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/063.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/064.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/065.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/066.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/067.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/068.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/069.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/070.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/071.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/072.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/073.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/074.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/075.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/076.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/077.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/078.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/079.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/080.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/081.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/082.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/083.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/084.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/085.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/086.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/087.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/088.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/089.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/090.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/091.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/092.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/093.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/094.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/095.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/096.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/097.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/098.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/099.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/100.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/101.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/102.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/103.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/104.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/105.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/106.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/107.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/108.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/109.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/110.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/111.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/112.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/113.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/114.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/115.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/116.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/117.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/118.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/119.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/120.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/121.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/122.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/123.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/124.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/125.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/126.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/127.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/128.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/129.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/130.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/131.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/132.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/133.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/134.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/135.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/136.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/137.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/138.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/139.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/140.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/141.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/142.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/143.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/144.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/145.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/146.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/147.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/148.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/149.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/150.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/151.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/152.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/153.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/154.jpg,Red Shouldered Hawk,test
+../data/raw/train/RED SHOULDERED HAWK/155.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/156.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/157.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/158.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/159.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/160.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/161.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/162.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/163.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/164.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/165.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/166.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/167.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/168.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/169.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/170.jpg,Red Shouldered Hawk,val
+../data/raw/train/RED SHOULDERED HAWK/171.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED SHOULDERED HAWK/172.jpg,Red Shouldered Hawk,train
+../data/raw/train/RED TAILED HAWK/001.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/002.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/003.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/004.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/005.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/006.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/007.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/008.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/009.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/010.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/011.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/012.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/013.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/014.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/015.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/016.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/017.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/018.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/019.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/020.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/021.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/022.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/023.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/024.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/025.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/026.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/027.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/028.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/029.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/030.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/031.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/032.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/033.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/034.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/035.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/036.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/037.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/038.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/039.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/040.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/041.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/042.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/043.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/044.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/045.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/046.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/047.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/048.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/049.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/050.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/051.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/052.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/053.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/054.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/055.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/056.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/057.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/058.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/059.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/060.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/061.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/062.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/063.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/064.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/065.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/066.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/067.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/068.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/069.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/070.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/071.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/072.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/073.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/074.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/075.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/076.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/077.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/078.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/079.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/080.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/081.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/082.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/083.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/084.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/085.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/086.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/087.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/088.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/089.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/090.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/091.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/092.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/093.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/094.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/095.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/096.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/097.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/098.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/099.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/100.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/101.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/102.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/103.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/104.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/105.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/106.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/107.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/108.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/109.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/110.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/111.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/112.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/113.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/114.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/115.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/116.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/117.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/118.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/119.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/120.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/121.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/122.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/123.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/124.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/125.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/126.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/127.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/128.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/129.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/130.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/131.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/132.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/133.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/134.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/135.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/136.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/137.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/138.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/139.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/140.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/141.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/142.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/143.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/144.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/145.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/146.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/147.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/148.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/149.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/150.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/151.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/152.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/153.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/154.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/155.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/156.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/157.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/158.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/159.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/160.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/161.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/162.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/163.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/164.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/165.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/166.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/167.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/168.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/169.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/170.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/171.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/172.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/173.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/174.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/175.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/176.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/177.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/178.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/179.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/180.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/181.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/182.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/183.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/184.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/185.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/186.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/187.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/188.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/189.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/190.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/191.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/192.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/193.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/194.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/195.jpg,Red Tailed Hawk,val
+../data/raw/train/RED TAILED HAWK/196.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/197.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/198.jpg,Red Tailed Hawk,test
+../data/raw/train/RED TAILED HAWK/199.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/200.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/201.jpg,Red Tailed Hawk,train
+../data/raw/train/RED TAILED HAWK/202.jpg,Red Tailed Hawk,val
+../data/raw/train/ROADRUNNER/001.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/002.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/003.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/004.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/005.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/006.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/007.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/008.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/009.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/010.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/011.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/012.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/013.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/014.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/015.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/016.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/017.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/018.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/019.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/020.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/021.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/022.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/023.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/024.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/025.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/026.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/027.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/028.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/029.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/030.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/031.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/032.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/033.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/034.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/035.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/036.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/037.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/038.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/039.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/040.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/041.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/042.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/043.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/044.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/045.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/046.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/047.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/048.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/049.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/050.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/051.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/052.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/053.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/054.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/055.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/056.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/057.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/058.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/059.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/060.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/061.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/062.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/063.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/064.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/065.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/066.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/067.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/068.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/069.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/070.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/071.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/072.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/073.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/074.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/075.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/076.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/077.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/078.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/079.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/080.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/081.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/082.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/083.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/084.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/085.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/086.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/087.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/088.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/089.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/090.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/091.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/092.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/093.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/094.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/095.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/096.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/097.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/098.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/099.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/100.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/101.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/102.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/103.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/104.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/105.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/106.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/107.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/108.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/109.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/110.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/111.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/112.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/113.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/114.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/115.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/116.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/117.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/118.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/119.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/120.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/121.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/122.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/123.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/124.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/125.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/126.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/127.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/128.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/129.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/130.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/131.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/132.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/133.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/134.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/135.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/136.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/137.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/138.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/139.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/140.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/141.jpg,Roadrunner,val
+../data/raw/train/ROADRUNNER/142.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/143.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/144.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/145.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/146.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/147.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/148.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/149.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/150.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/151.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/152.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/153.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/154.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/155.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/156.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/157.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/158.jpg,Roadrunner,train
+../data/raw/train/ROADRUNNER/159.jpg,Roadrunner,test
+../data/raw/train/ROADRUNNER/160.jpg,Roadrunner,val
+../data/raw/train/ROCK DOVE/001.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/002.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/003.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/004.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/005.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/006.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/007.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/008.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/009.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/010.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/011.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/012.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/013.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/014.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/015.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/016.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/017.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/018.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/019.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/020.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/021.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/022.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/023.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/024.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/025.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/026.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/027.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/028.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/029.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/030.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/031.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/032.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/033.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/034.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/035.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/036.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/037.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/038.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/039.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/040.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/041.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/042.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/043.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/044.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/045.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/046.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/047.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/048.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/049.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/050.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/051.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/052.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/053.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/054.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/055.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/056.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/057.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/058.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/059.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/060.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/061.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/062.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/063.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/064.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/065.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/066.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/067.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/068.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/069.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/070.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/071.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/072.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/073.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/074.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/075.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/076.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/077.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/078.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/079.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/080.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/081.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/082.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/083.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/084.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/085.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/086.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/087.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/088.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/089.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/090.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/091.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/092.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/093.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/094.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/095.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/096.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/097.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/098.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/099.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/100.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/101.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/102.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/103.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/104.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/105.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/106.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/107.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/108.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/109.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/110.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/111.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/112.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/113.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/114.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/115.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/116.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/117.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/118.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/119.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/120.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/121.jpg,Rock Dove,test
+../data/raw/train/ROCK DOVE/122.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/123.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/124.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/125.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/126.jpg,Rock Dove,val
+../data/raw/train/ROCK DOVE/127.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/128.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/129.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/130.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/131.jpg,Rock Dove,train
+../data/raw/train/ROCK DOVE/132.jpg,Rock Dove,val
+../data/raw/valid/COMMON GRACKLE/1.jpg,Common Grackle,train
+../data/raw/valid/COMMON GRACKLE/2.jpg,Common Grackle,val
+../data/raw/valid/COMMON GRACKLE/3.jpg,Common Grackle,train
+../data/raw/valid/COMMON GRACKLE/4.jpg,Common Grackle,train
+../data/raw/valid/COMMON GRACKLE/5.jpg,Common Grackle,train
+../data/raw/valid/CROW/1.jpg,Crow,train
+../data/raw/valid/CROW/2.jpg,Crow,train
+../data/raw/valid/CROW/3.jpg,Crow,val
+../data/raw/valid/CROW/4.jpg,Crow,train
+../data/raw/valid/CROW/5.jpg,Crow,val
+../data/raw/valid/GREEN JAY/1.jpg,Green Jay,train
+../data/raw/valid/GREEN JAY/2.jpg,Green Jay,train
+../data/raw/valid/GREEN JAY/3.jpg,Green Jay,train
+../data/raw/valid/GREEN JAY/4.jpg,Green Jay,train
+../data/raw/valid/GREEN JAY/5.jpg,Green Jay,test
+../data/raw/valid/MOURNING DOVE/1.jpg,Mourning Dove,train
+../data/raw/valid/MOURNING DOVE/2.jpg,Mourning Dove,test
+../data/raw/valid/MOURNING DOVE/3.jpg,Mourning Dove,train
+../data/raw/valid/MOURNING DOVE/4.jpg,Mourning Dove,train
+../data/raw/valid/MOURNING DOVE/5.jpg,Mourning Dove,test
+../data/raw/valid/NORTHERN CARDINAL/1.jpg,Northern Cardinal,train
+../data/raw/valid/NORTHERN CARDINAL/2.jpg,Northern Cardinal,train
+../data/raw/valid/NORTHERN CARDINAL/3.jpg,Northern Cardinal,train
+../data/raw/valid/NORTHERN CARDINAL/4.jpg,Northern Cardinal,train
+../data/raw/valid/NORTHERN CARDINAL/5.jpg,Northern Cardinal,train
+../data/raw/valid/NORTHERN MOCKINGBIRD/1.jpg,Northern Mockingbird,train
+../data/raw/valid/NORTHERN MOCKINGBIRD/2.jpg,Northern Mockingbird,train
+../data/raw/valid/NORTHERN MOCKINGBIRD/3.jpg,Northern Mockingbird,train
+../data/raw/valid/NORTHERN MOCKINGBIRD/4.jpg,Northern Mockingbird,train
+../data/raw/valid/NORTHERN MOCKINGBIRD/5.jpg,Northern Mockingbird,val
+../data/raw/valid/RED SHOULDERED HAWK/1.jpg,Red Shouldered Hawk,train
+../data/raw/valid/RED SHOULDERED HAWK/2.jpg,Red Shouldered Hawk,train
+../data/raw/valid/RED SHOULDERED HAWK/3.jpg,Red Shouldered Hawk,val
+../data/raw/valid/RED SHOULDERED HAWK/4.jpg,Red Shouldered Hawk,val
+../data/raw/valid/RED SHOULDERED HAWK/5.jpg,Red Shouldered Hawk,train
+../data/raw/valid/RED TAILED HAWK/1.jpg,Red Tailed Hawk,val
+../data/raw/valid/RED TAILED HAWK/2.jpg,Red Tailed Hawk,train
+../data/raw/valid/RED TAILED HAWK/3.jpg,Red Tailed Hawk,train
+../data/raw/valid/RED TAILED HAWK/4.jpg,Red Tailed Hawk,val
+../data/raw/valid/RED TAILED HAWK/5.jpg,Red Tailed Hawk,train
+../data/raw/valid/ROADRUNNER/1.jpg,Roadrunner,val
+../data/raw/valid/ROADRUNNER/2.jpg,Roadrunner,val
+../data/raw/valid/ROADRUNNER/3.jpg,Roadrunner,test
+../data/raw/valid/ROADRUNNER/4.jpg,Roadrunner,train
+../data/raw/valid/ROADRUNNER/5.jpg,Roadrunner,val
+../data/raw/valid/ROCK DOVE/1.jpg,Rock Dove,train
+../data/raw/valid/ROCK DOVE/2.jpg,Rock Dove,val
+../data/raw/valid/ROCK DOVE/3.jpg,Rock Dove,test
+../data/raw/valid/ROCK DOVE/4.jpg,Rock Dove,val
+../data/raw/valid/ROCK DOVE/5.jpg,Rock Dove,train
+../data/raw/test/COMMON GRACKLE/1.jpg,Common Grackle,test
+../data/raw/test/COMMON GRACKLE/2.jpg,Common Grackle,train
+../data/raw/test/COMMON GRACKLE/3.jpg,Common Grackle,train
+../data/raw/test/COMMON GRACKLE/4.jpg,Common Grackle,test
+../data/raw/test/COMMON GRACKLE/5.jpg,Common Grackle,train
+../data/raw/test/CROW/1.jpg,Crow,train
+../data/raw/test/CROW/2.jpg,Crow,val
+../data/raw/test/CROW/3.jpg,Crow,test
+../data/raw/test/CROW/4.jpg,Crow,train
+../data/raw/test/CROW/5.jpg,Crow,test
+../data/raw/test/GREEN JAY/1.jpg,Green Jay,train
+../data/raw/test/GREEN JAY/2.jpg,Green Jay,train
+../data/raw/test/GREEN JAY/3.jpg,Green Jay,train
+../data/raw/test/GREEN JAY/4.jpg,Green Jay,train
+../data/raw/test/GREEN JAY/5.jpg,Green Jay,train
+../data/raw/test/MOURNING DOVE/1.jpg,Mourning Dove,train
+../data/raw/test/MOURNING DOVE/2.jpg,Mourning Dove,train
+../data/raw/test/MOURNING DOVE/3.jpg,Mourning Dove,train
+../data/raw/test/MOURNING DOVE/4.jpg,Mourning Dove,train
+../data/raw/test/MOURNING DOVE/5.jpg,Mourning Dove,train
+../data/raw/test/NORTHERN CARDINAL/1.jpg,Northern Cardinal,train
+../data/raw/test/NORTHERN CARDINAL/2.jpg,Northern Cardinal,train
+../data/raw/test/NORTHERN CARDINAL/3.jpg,Northern Cardinal,train
+../data/raw/test/NORTHERN CARDINAL/4.jpg,Northern Cardinal,train
+../data/raw/test/NORTHERN CARDINAL/5.jpg,Northern Cardinal,train
+../data/raw/test/NORTHERN MOCKINGBIRD/1.jpg,Northern Mockingbird,train
+../data/raw/test/NORTHERN MOCKINGBIRD/2.jpg,Northern Mockingbird,val
+../data/raw/test/NORTHERN MOCKINGBIRD/3.jpg,Northern Mockingbird,train
+../data/raw/test/NORTHERN MOCKINGBIRD/4.jpg,Northern Mockingbird,train
+../data/raw/test/NORTHERN MOCKINGBIRD/5.jpg,Northern Mockingbird,val
+../data/raw/test/RED SHOULDERED HAWK/1.jpg,Red Shouldered Hawk,train
+../data/raw/test/RED SHOULDERED HAWK/2.jpg,Red Shouldered Hawk,train
+../data/raw/test/RED SHOULDERED HAWK/3.jpg,Red Shouldered Hawk,train
+../data/raw/test/RED SHOULDERED HAWK/4.jpg,Red Shouldered Hawk,val
+../data/raw/test/RED SHOULDERED HAWK/5.jpg,Red Shouldered Hawk,train
+../data/raw/test/RED TAILED HAWK/1.jpg,Red Tailed Hawk,val
+../data/raw/test/RED TAILED HAWK/2.jpg,Red Tailed Hawk,train
+../data/raw/test/RED TAILED HAWK/3.jpg,Red Tailed Hawk,test
+../data/raw/test/RED TAILED HAWK/4.jpg,Red Tailed Hawk,train
+../data/raw/test/RED TAILED HAWK/5.jpg,Red Tailed Hawk,train
+../data/raw/test/ROADRUNNER/1.jpg,Roadrunner,train
+../data/raw/test/ROADRUNNER/2.jpg,Roadrunner,train
+../data/raw/test/ROADRUNNER/3.jpg,Roadrunner,train
+../data/raw/test/ROADRUNNER/4.jpg,Roadrunner,train
+../data/raw/test/ROADRUNNER/5.jpg,Roadrunner,train
+../data/raw/test/ROCK DOVE/1.jpg,Rock Dove,train
+../data/raw/test/ROCK DOVE/2.jpg,Rock Dove,val
+../data/raw/test/ROCK DOVE/3.jpg,Rock Dove,train
+../data/raw/test/ROCK DOVE/4.jpg,Rock Dove,train
+../data/raw/test/ROCK DOVE/5.jpg,Rock Dove,train

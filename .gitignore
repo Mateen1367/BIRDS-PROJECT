@@ -4,3 +4,4 @@ data/raw/
 models/*.keras
 .ipynb_checkpoints/
 __pycache__/
+models/
