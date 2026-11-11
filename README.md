@@ -76,6 +76,7 @@ Raw images → Data understanding → Minimum preprocessing → Train/val/test s
 | 1 | **Baseline:** simple CNN | Minimum preprocessing only (pixel scaling) |
 | 2 | Simple CNN + augmentation | Random flips, rotation, zoom, contrast |
 | 3 | MobileNetV2 transfer learning | Pretrained ImageNet features, new 10-class output layer |
+| 3b | MobileNetV2, no augmentation | Check whether augmentation helps the pretrained model |
 | 4 | MobileNetV2 fine-tuned | Top layers unfrozen, small learning rate |
 | 5 | Tuned model | Learning rate / dropout / layers unfrozen chosen on **validation only** |
 
@@ -93,12 +94,16 @@ birds-project/
 │       └── splits.csv       # our train/val/test split
 ├── notebooks/
 │   ├── 01_data_and_preprocessing.ipynb   # data checks, EDA, split   ✅
-│   └── 02_modeling_and_evaluation.ipynb  # models, tuning, evaluation (in progress)
+│   └── 02_modeling_and_evaluation.ipynb  # baseline → transfer learning → tuning → evaluation   ✅
 ├── src/
-│   └── download_data.sh     # downloads only our 10 species
+│   ├── download_data.sh              # downloads only our 10 species
+│   └── add_nb2_interpretations.py    # writes the "What this shows" notes into notebook 2
+├── models/                  # saved final model (not in git; recreated by notebook 2)
 ├── reports/
+│   ├── results.json         # every number used in the slides
 │   └── figures/             # charts used in the slides
-└── docs/                    # presentation plan and references
+└── docs/
+    └── presentation_plan.md # slide plan, speaker split, previous work, references
 ```
 
 ---
@@ -109,7 +114,7 @@ birds-project/
 pip install -r requirements.txt
 bash src/download_data.sh          # ~2 GB stream, keeps ~48 MB of images
 ```
-Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_modeling_and_evaluation.ipynb`.
+Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_modeling_and_evaluation.ipynb` (about 25 minutes on a laptop CPU; the notebook limits TensorFlow to 4 threads).
 
 > **Windows note:** if `import tensorflow` fails with *"DLL load failed … _pywrap_tensorflow_internal"*, your Visual C++ runtime is out of date. Run `pip install msvc-runtime` (or install the latest Microsoft Visual C++ Redistributable).
 
@@ -117,12 +122,38 @@ Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_m
 
 ## 6. Results
 
-*Coming soon: the model comparison table, confusion matrix and key findings will be added here once notebook 2 is finished.*
+### Every step, scored the same way (macro F1)
 
----
+| Step | Model | Validation F1 | Test F1 | Test accuracy |
+|---|---|---|---|---|
+| 0 | Majority-class guess | 0.022 | 0.022 | 12.5% |
+| 1 | **Baseline:** simple CNN (minimum preprocessing) | 0.608 | 0.679 | 68.5% |
+| 2 | Simple CNN + augmentation | 0.558 ⬇ | 0.559 | 55.6% |
+| 3 | MobileNetV2 frozen (transfer learning) + augmentation | 0.956 | 0.936 | 93.4% |
+| **3b** | **MobileNetV2 frozen, no augmentation (final model)** | **0.964** | **0.964** | **96.1%** |
+| 4 | Fine-tuned, top 30 layers, lr 1e-5 (default) | 0.960 | 0.955 | 95.3% |
+| 5 | Tuned (2×2 grid on validation): best = default | 0.960 | 0.955 | 95.3% |
+
+The final model was chosen by **validation** macro F1 only; test scores are reported, not used to choose.
+
+### Key findings
+1. **Transfer learning made the difference:** 0.608 → 0.964 validation F1 while training only 12,810 weights.
+2. **Steps that did not help:** augmentation (both models) and fine-tuning/tuning. With ~120 clean, centered photos per bird, extra randomness and extra flexibility didn't pay off.
+3. **All 10 test mistakes are inside the lookalike pairs:** 5 hawk, 4 crow/grackle, 1 dove; 7 of the 10 had confidence under 65%.
+4. **Grad-CAM:** the model mostly looks at the bird's body, not the sky background (the border gets only 17–34% of the heatmap weight vs. 49% of the area).
+
+![Confusion matrix](reports/figures/confusion_matrix.png)
+
+### Limitations
+- Small dataset (~120 training photos per species) of clean, cropped, mostly web-sourced photos; results won't transfer directly to blurry backyard or camera-trap photos.
+- Only 10 species; the model always picks one of them, even for a bird it has never seen.
+- Some labels look wrong (e.g., a "Mourning Dove" with a collared-dove neck ring).
+- One random split; with ~25 test images per species, one image is ~4 points of per-class recall.
 
 ## 7. References
 
 - Piosenka, G. (2023). *BIRDS 525 Species – Image Classification* [Data set]. Kaggle. Mirror: https://huggingface.co/datasets/chriamue/bird-species-dataset (CC0 1.0).
 - Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted residuals and linear bottlenecks. *CVPR*.
+- Geirhos, R., et al. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence, 2*(11), 665–673.
+- Selvaraju, R. R., et al. (2017). Grad-CAM: Visual explanations from deep networks via gradient-based localization. *ICCV*.
 - Abadi, M., et al. (2015). *TensorFlow: Large-scale machine learning on heterogeneous systems*. https://www.tensorflow.org

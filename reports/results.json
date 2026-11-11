@@ -1,0 +1,228 @@
+{
+  "classes": [
+    "Common Grackle",
+    "Crow",
+    "Green Jay",
+    "Mourning Dove",
+    "Northern Cardinal",
+    "Northern Mockingbird",
+    "Red Shouldered Hawk",
+    "Red Tailed Hawk",
+    "Roadrunner",
+    "Rock Dove"
+  ],
+  "final_model": "3b. MobileNetV2 frozen, no augmentation",
+  "best_tuning_config": "tune: top 30 layers, lr 1e-05",
+  "validation": {
+    "0. Majority guess": {
+      "accuracy": 0.125,
+      "precision": 0.012,
+      "recall": 0.1,
+      "F1": 0.022,
+      "ROC-AUC": 0.5,
+      "epochs": NaN,
+      "minutes": NaN
+    },
+    "1. Baseline CNN": {
+      "accuracy": 0.609,
+      "precision": 0.628,
+      "recall": 0.614,
+      "F1": 0.608,
+      "ROC-AUC": 0.939,
+      "epochs": 30.0,
+      "minutes": 3.7
+    },
+    "2. CNN + augmentation": {
+      "accuracy": 0.555,
+      "precision": 0.581,
+      "recall": 0.557,
+      "F1": 0.558,
+      "ROC-AUC": 0.904,
+      "epochs": 28.0,
+      "minutes": 5.0
+    },
+    "3. MobileNetV2 frozen": {
+      "accuracy": 0.953,
+      "precision": 0.963,
+      "recall": 0.955,
+      "F1": 0.956,
+      "ROC-AUC": 0.998,
+      "epochs": 15.0,
+      "minutes": 4.3
+    },
+    "3b. MobileNetV2 frozen, no augmentation": {
+      "accuracy": 0.961,
+      "precision": 0.967,
+      "recall": 0.964,
+      "F1": 0.964,
+      "ROC-AUC": 0.998,
+      "epochs": 15.0,
+      "minutes": 3.3
+    },
+    "4. Fine-tuned (default)": {
+      "accuracy": 0.957,
+      "precision": 0.963,
+      "recall": 0.959,
+      "F1": 0.96,
+      "ROC-AUC": 0.998,
+      "epochs": 4.0,
+      "minutes": 1.4
+    },
+    "5. Fine-tuned (tuned)": {
+      "accuracy": 0.957,
+      "precision": 0.963,
+      "recall": 0.959,
+      "F1": 0.96,
+      "ROC-AUC": 0.998,
+      "epochs": 4.0,
+      "minutes": 1.4
+    }
+  },
+  "test": {
+    "0. Majority guess": {
+      "accuracy": 0.125,
+      "precision": 0.012,
+      "recall": 0.1,
+      "F1": 0.022,
+      "ROC-AUC": 0.5
+    },
+    "1. Baseline CNN": {
+      "accuracy": 0.685,
+      "precision": 0.717,
+      "recall": 0.686,
+      "F1": 0.679,
+      "ROC-AUC": 0.957
+    },
+    "2. CNN + augmentation": {
+      "accuracy": 0.556,
+      "precision": 0.588,
+      "recall": 0.552,
+      "F1": 0.559,
+      "ROC-AUC": 0.923
+    },
+    "3. MobileNetV2 frozen": {
+      "accuracy": 0.934,
+      "precision": 0.948,
+      "recall": 0.937,
+      "F1": 0.936,
+      "ROC-AUC": 0.999
+    },
+    "3b. MobileNetV2 frozen, no augmentation": {
+      "accuracy": 0.961,
+      "precision": 0.964,
+      "recall": 0.964,
+      "F1": 0.964,
+      "ROC-AUC": 0.999
+    },
+    "4. Fine-tuned (default)": {
+      "accuracy": 0.953,
+      "precision": 0.958,
+      "recall": 0.955,
+      "F1": 0.955,
+      "ROC-AUC": 0.999
+    },
+    "5. Fine-tuned (tuned)": {
+      "accuracy": 0.953,
+      "precision": 0.958,
+      "recall": 0.955,
+      "F1": 0.955,
+      "ROC-AUC": 0.999
+    }
+  },
+  "tuning_grid": [
+    {
+      "unfrozen layers": 30,
+      "learning rate": "1e-05",
+      "val F1": 0.96,
+      "val accuracy": 0.957,
+      "epochs": 4
+    },
+    {
+      "unfrozen layers": 60,
+      "learning rate": "1e-05",
+      "val F1": 0.955,
+      "val accuracy": 0.953,
+      "epochs": 4
+    },
+    {
+      "unfrozen layers": 60,
+      "learning rate": "3e-05",
+      "val F1": 0.939,
+      "val accuracy": 0.938,
+      "epochs": 4
+    },
+    {
+      "unfrozen layers": 30,
+      "learning rate": "3e-05",
+      "val F1": 0.931,
+      "val accuracy": 0.93,
+      "epochs": 8
+    }
+  ],
+  "per_class_test_f1": {
+    "Red Shouldered Hawk": {
+      "baseline F1": 0.629,
+      "final F1": 0.906
+    },
+    "Crow": {
+      "baseline F1": 0.667,
+      "final F1": 0.923
+    },
+    "Red Tailed Hawk": {
+      "baseline F1": 0.522,
+      "final F1": 0.923
+    },
+    "Common Grackle": {
+      "baseline F1": 0.627,
+      "final F1": 0.929
+    },
+    "Rock Dove": {
+      "baseline F1": 0.529,
+      "final F1": 0.977
+    },
+    "Mourning Dove": {
+      "baseline F1": 0.576,
+      "final F1": 0.98
+    },
+    "Northern Mockingbird": {
+      "baseline F1": 0.526,
+      "final F1": 1.0
+    },
+    "Green Jay": {
+      "baseline F1": 0.941,
+      "final F1": 1.0
+    },
+    "Northern Cardinal": {
+      "baseline F1": 0.917,
+      "final F1": 1.0
+    },
+    "Roadrunner": {
+      "baseline F1": 0.857,
+      "final F1": 1.0
+    }
+  },
+  "errors": {
+    "1. Baseline CNN": {
+      "mistakes": 81,
+      "inside a lookalike pair": 32,
+      "other mistakes": 49
+    },
+    "3b. MobileNetV2 frozen, no augmentation": {
+      "mistakes": 10,
+      "inside a lookalike pair": 10,
+      "other mistakes": 0
+    }
+  },
+  "gradcam_border_share": {
+    "Common Grackle": 0.3409999907016754,
+    "Crow": 0.24199999868869781,
+    "Green Jay": 0.22499999403953552,
+    "Mourning Dove": 0.3310000002384186,
+    "Northern Cardinal": 0.2759999930858612,
+    "Northern Mockingbird": 0.17000000178813934,
+    "Red Shouldered Hawk": 0.2290000021457672,
+    "Red Tailed Hawk": 0.2680000066757202,
+    "Roadrunner": 0.30000001192092896,
+    "Rock Dove": 0.34200000762939453
+  }
+}
