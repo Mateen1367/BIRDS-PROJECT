@@ -77,6 +77,26 @@ tbl.setStyle(TableStyle([
 story += [Spacer(1, 6), tbl, Spacer(1, 10), Paragraph("<b>Key numbers everyone should know:</b> " + escape(KEY), body),
           Paragraph("Slides 22–23 are backup slides (per-species F1, training curves) for questions.", small)]
 
+# ---- "Read this first": summary of the code and models
+bspec = importlib.util.spec_from_file_location("briefing", "src/briefing.py")
+bf = importlib.util.module_from_spec(bspec)
+bspec.loader.exec_module(bf)
+story += [PageBreak(), Paragraph("Read this first: what we did in the code", h1), Paragraph(escape(bf.INTRO), body)]
+for sec_title, items in bf.SECTIONS:
+    story.append(Paragraph(escape(sec_title), h2))
+    story.append(bullets(items))
+    if sec_title.startswith("4."):
+        rt = Table(bf.RESULTS, colWidths=[0.45 * inch, 2.75 * inch, 1.2 * inch, 0.75 * inch, 0.75 * inch, 1.0 * inch])
+        rt.setStyle(TableStyle([
+            ("FONTNAME", (0, 0), (-1, -1), "Calibri"), ("FONTNAME", (0, 0), (-1, 0), "Calibri-Bold"),
+            ("FONTNAME", (0, 5), (-1, 5), "Calibri-Bold"), ("BACKGROUND", (0, 5), (-1, 5), colors.HexColor("#EAF2F8")),
+            ("FONTSIZE", (0, 0), (-1, -1), 10), ("BACKGROUND", (0, 0), (-1, 0), NIGHT), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#C8D3DC")), ("ALIGN", (2, 0), (-1, -1), "CENTER"),
+            ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]))
+        story += [Spacer(1, 4), rt, Spacer(1, 4)]
+story.append(Paragraph("7. If the professor asks…", h2))
+story.append(bullets([f"<b>{escape(q)}</b> {escape(a)}" for q, a in bf.QA]))
+
 for name, part, rng, t in m.SPEAKERS:
     story.append(PageBreak())
     story.append(Paragraph(f"{escape(name)}: {escape(part)} (slides {rng[0]}–{rng[-1]}, {escape(t)})", h1))
@@ -126,6 +146,35 @@ for name, part, rng, tm in m.SPEAKERS:
 p = doc.add_paragraph()
 p.add_run("Key numbers everyone should know: ").bold = True
 p.add_run(KEY)
+
+import re  # noqa: E402
+
+
+def rich(par, txt):
+    """Add text with <b>…</b> parts as bold runs."""
+    for i, part in enumerate(re.split(r"</?b>", txt)):
+        if part:
+            par.add_run(part).bold = i % 2 == 1
+
+
+doc.add_page_break()
+doc.add_heading("Read this first: what we did in the code", 1)
+doc.add_paragraph(bf.INTRO)
+for sec_title, items in bf.SECTIONS:
+    doc.add_heading(sec_title, 2)
+    for it in items:
+        rich(doc.add_paragraph(style="List Bullet"), it)
+    if sec_title.startswith("4."):
+        rt = doc.add_table(rows=0, cols=len(bf.RESULTS[0]))
+        rt.style = "Light Grid Accent 1"
+        for row in bf.RESULTS:
+            for c, v in zip(rt.add_row().cells, row):
+                c.text = v
+doc.add_heading("7. If the professor asks…", 2)
+for q, a in bf.QA:
+    para = doc.add_paragraph(style="List Bullet")
+    para.add_run(q + " ").bold = True
+    para.add_run(a)
 
 
 def lab(txt, rgb):
