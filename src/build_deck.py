@@ -371,442 +371,318 @@ f3 = lambda v: f"{v:.3f}"
 counts = DF.species.value_counts()
 sky = DF.groupby("species").sky_border.mean()
 
-# ======================================================================= MATEEN 1-7
-# 1 Title
+# ======================================================================= CV-guideline deck (17 slides + backup)
+GREEN_ = RGBColor(0x2E, 0x7D, 0x4F)
+CHAIN = ["Intro", "Data", "Preprocess", "Baseline", "Transfer", "Results"]
+MAIN = {"Baseline CNN": "1. Baseline CNN", "MobileNetV2": "3b. MobileNetV2 frozen, no augmentation",
+        "ResNet50": "3c. ResNet50 frozen, no augmentation"}
+CR = R["class_reports"]
+base_t, mob_t, res_t = (T[MAIN[k]] for k in ("Baseline CNN", "MobileNetV2", "ResNet50"))
+nice = lambda sp: sp.replace("Red Tailed", "Red-tailed").replace("Red Shouldered", "Red-shouldered")
+
+
+def report_table(slide, x, y, model, highlight_low=0.94, size=12, row_h=0.36):
+    rep_ = CR[model]
+    rows = [["Species", "Precision", "Recall", "F1"]]
+    fills = {}
+    for i, sp in enumerate(R["classes"], start=1):
+        r_ = rep_[sp]
+        rows.append([nice(sp), f"{r_['precision']:.2f}", f"{r_['recall']:.2f}", f"{r_['f1-score']:.2f}"])
+        if r_["f1-score"] < highlight_low:
+            fills[(i, 3)] = (ROSE, RED)
+    ma = rep_["macro avg"]
+    rows.append(["Macro average", f"{ma['precision']:.2f}", f"{ma['recall']:.2f}", f"{ma['f1-score']:.2f}"])
+    t = table(slide, x, y, rows, col_w=[2.3, 1.0, 0.9, 0.85], row_h=row_h, size=size, highlight=len(rows) - 1, fills=fills)
+    return t
+
+
+def stat_cards(slide, x, y, cards, w=1.95, h=1.45):
+    for i, (big, small_, col, fill) in enumerate(cards):
+        x0 = x + i * (w + 0.15)
+        panel(slide, x0, y, w, h, fill=fill)
+        text(slide, x0 + 0.12, y + 0.12, w - 0.24, 0.75, [big], size=30, bold=True, color=col, face=HEAD, align=PP_ALIGN.CENTER, label="sc " + big)
+        text(slide, x0 + 0.12, y + 0.88, w - 0.24, 0.5, [small_], size=12, color=MUTED, align=PP_ALIGN.CENTER, label="scs " + small_)
+
+
+def results_slide(n, model, title, key, col, fill, gain_label, note):
+    s = new_slide()
+    header(s, "Results" if model != "Baseline CNN" else "Baseline", title, n, chain="Transfer" if model != "Baseline CNN" else "Baseline")
+    text(s, 0.6, 1.9, 6.6, 0.35, [f"{model}: accuracy and loss during training"], size=14, bold=True, color=MUTED, label="ct")
+    fit_picture(s, FIG / f"curves_{model.split()[0].lower()}.png", 0.6, 2.25, 6.6, 2.45, center=False)
+    m_ = T[key]
+    cards = [(f"{m_['accuracy']:.1%}", "test accuracy", col, fill), (f"{m_['loss']:.3f}", "test loss", col, fill), gain_label]
+    stat_cards(s, 0.6, 4.85, cards)
+    text(s, 0.6, 6.4, 6.6, 0.5, [note], size=12, italic=True, color=MUTED, label="note" + str(n))
+    text(s, 7.45, 1.9, 5.3, 0.35, ["Classification report (test set, 257 photos)"], size=14, bold=True, color=MUTED, label="crt")
+    report_table(s, 7.45, 2.3, model, highlight_low=0.6 if model == "Baseline CNN" else 0.94)
+    notes(s, n)
+    return s
+
+
+# 1 Title -------------------------------------------------------------------------------------
 s = new_slide(dark=True)
 text(s, 0.8, 0.8, 7.0, 0.4, ["DATA 4380  ·  DATA PROBLEMS  ·  COMPUTER VISION PROJECT"], size=13, bold=True, color=SKY)
 text(s, 0.8, 1.45, 6.8, 2.1, ["Which Texas Bird Is It?"], size=52, bold=True, color=WHITE, face=HEAD, label="title big")
-text(s, 0.8, 3.65, 6.6, 1.0, ["Classifying 10 species from a single photo with convolutional neural networks"],
+text(s, 0.8, 3.65, 6.6, 1.0, ["Classifying 10 species from a single photo with CNNs and transfer learning"],
      size=22, color=SKY, face=HEAD, label="subtitle")
 text(s, 0.8, 5.5, 6.8, 1.2, [[("Mateen Jan  ·  Tej Govindu  ·  Alejandro Alfonso", {"bold": True, "color": WHITE})],
                              "Instructor: Dr. Masoud Rostami  ·  UT Arlington  ·  November 18, 2026"], size=15, color=SKY, after=6)
 for i, sp in enumerate(["Northern Cardinal", "Green Jay", "Roadrunner", "Red Tailed Hawk"]):
     px_, py_ = 8.3 + (i % 2) * 2.3, 1.0 + (i // 2) * 2.75
     picture(s, THUMB[sp], px_, py_, w=2.1, h=2.1, border=WHITE)
-    text(s, px_, py_ + 2.17, 2.1, 0.35, [sp.replace("Red Tailed", "Red-tailed")], size=12, color=SKY, italic=True,
-         align=PP_ALIGN.CENTER, label="cap " + sp)
+    text(s, px_, py_ + 2.17, 2.1, 0.35, [nice(sp)], size=12, color=SKY, italic=True, align=PP_ALIGN.CENTER, label="cap " + sp)
 notes(s, 1)
 
-# 2 Background
+# 2 Introduction ---------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Background", "Some Texas birds are easy to tell apart; others fool even people", 2)
-pairs2 = [("Easy", "Northern Cardinal", "Roadrunner", BLUE, TINT), ("Hard", "Red Tailed Hawk", "Red Shouldered Hawk", RED, ROSE)]
-for r, (lab, a, b, col, fill) in enumerate(pairs2):
+header(s, "Introduction", "One photo in, one bird name out: 10 Texas species", 2, chain="Intro")
+chips = [("What we classify", "Bird photos, one species per photo"), ("Classes", "10 Texas bird species"),
+         ("Our approach", "A small CNN as a baseline, then 2 transfer learning models")]
+for i, (k, v) in enumerate(chips):
+    y0 = 1.95 + i * 1.12
+    panel(s, 0.6, y0, 5.9, 0.98, fill=TINT)
+    text(s, 0.85, y0 + 0.1, 5.4, 0.3, [k.upper()], size=11, bold=True, color=BLUE)
+    text(s, 0.85, y0 + 0.42, 5.4, 0.5, [v], size=16, bold=True, label="chip " + k)
+panel(s, 0.6, 5.4, 5.9, 1.35, fill=SAND)
+text(s, 0.85, 5.48, 5.4, 1.2, [[("Why it matters: ", {"bold": True, "color": BROWN}),
+                               ("bird-ID apps and citizen science (eBird, iNaturalist) turn photos into data about where birds live. A wrong ID is a bad record.", {})]],
+     size=14, label="why2")
+for r, (lab_, a, b, col, fill) in enumerate([("Easy", "Northern Cardinal", "Roadrunner", BLUE, TINT),
+                                              ("Hard", "Red Tailed Hawk", "Red Shouldered Hawk", RED, ROSE)]):
     y0 = 1.95 + r * 2.45
-    panel(s, 0.6, y0, 6.0, 2.25, fill=fill)
-    text(s, 0.8, y0 + 0.12, 1.1, 0.4, [lab.upper()], size=13, bold=True, color=col)
+    panel(s, 6.85, y0, 5.88, 2.25, fill=fill)
+    text(s, 7.05, y0 + 0.12, 1.0, 0.4, [lab_.upper()], size=13, bold=True, color=col)
     for k, sp in enumerate((a, b)):
-        picture(s, THUMB[sp], 1.35 + k * 2.75, y0 + 0.15, w=1.6, h=1.6)
-        text(s, 1.15 + k * 2.75, y0 + 1.8, 2.0, 0.35, [sp.replace("Red Tailed", "Red-tailed").replace("Red Shouldered", "Red-shouldered")],
-             size=12, italic=True, color=MUTED, align=PP_ALIGN.CENTER, label="cap2 " + sp)
-    text(s, 2.95, y0 + 0.45, 1.15, 1.0, ["vs."], size=26, bold=True, color=col, face=HEAD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="vs")
-boxes = [("The problem", "Given one photo, name the species, including birds that look nearly alike."),
-         ("Why it matters", "Bird-ID apps and citizen science (eBird, iNaturalist) turn photos into data ecologists use. A wrong ID is a bad record."),
-         ("Who benefits", "Beginner birders and students, citizen-science projects, researchers sorting large photo sets."),
-         ("Why we chose it", "Visual and fun, uses this unit's CNNs and transfer learning, and lookalikes make it a real challenge.")]
-for i, (h_, b_) in enumerate(boxes):
-    y0 = 1.95 + i * 1.22
-    shape(s, MSO_SHAPE.RECTANGLE, 6.95, y0, 0.08, 1.05, fill=RED if i == 0 else BLUE)
-    text(s, 7.2, y0, 5.5, 0.35, [h_], size=16, bold=True, color=INK, face=HEAD, label="bh " + h_)
-    text(s, 7.2, y0 + 0.36, 5.5, 0.75, [b_], size=14, color=INK, label="bb " + h_)
+        picture(s, THUMB[sp], 7.75 + k * 2.6, y0 + 0.15, w=1.6, h=1.6)
+        text(s, 7.55 + k * 2.6, y0 + 1.8, 2.0, 0.35, [nice(sp)], size=12, italic=True, color=MUTED, align=PP_ALIGN.CENTER, label="c2 " + sp)
+    text(s, 9.35, y0 + 0.45, 1.0, 1.0, ["vs."], size=24, bold=True, color=col, face=HEAD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="vs")
 notes(s, 2)
 
-# 3 Previous work
+# 3 Dataset ---------------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Previous work", "Earlier work told us to use a pretrained model, and to check what it looks at", 3)
-rows = [["", "Merlin Photo ID\n(Cornell Lab)", "CUB-200-2011\n(Wah et al., 2011)", "BIRDS 525 projects\n(e.g., EfficientNet-B2)", "Shortcut learning\n(Geirhos et al., 2020)"],
-        ["What / data", "Bird-ID app; millions of eBird photos", "Benchmark: 200 lookalike species, 11,788 photos", "Our dataset, all 525 species", "Review of models that 'cheat'"],
-        ["Method", "Deep CNN + location and date", "Original baselines, later deep CNNs", "Fine-tuned ImageNet model", "Wolf vs. husky model used snow"],
-        ["Found", "Right bird in top 3 ~90% of the time", "Baselines only 10–17%; fine-grained is hard", "~99% on clean, centered photos", "High scores can come from background"],
-        ["How ours compares", "Same task, 10 species, photo only", "Same lookalike problem, smaller scale", "Smaller, faster MobileNetV2", "We check with Grad-CAM heatmaps"]]
-t = table(s, 0.6, 1.95, rows, col_w=[1.85, 2.57, 2.57, 2.57, 2.57], row_h=0.9, size=14)
-for j in range(1, 5):
-    c = t.cell(4, j)
-    c.fill.solid()
-    c.fill.fore_color.rgb = SAND
-text(s, 0.6, 6.55, 12.1, 0.35, ["Sources: Cornell Lab of Ornithology (n.d.); Wah et al. (2011); Piosenka (2023); Geirhos et al. (2020); Ribeiro et al. (2016). Full list on slide 20."],
-     size=11, color=MUTED, italic=True, label="src3")
+header(s, "Dataset", "1,710 photos of 10 species, split 70 / 15 / 15", 3, chain="Data")
+order10 = ["Northern Cardinal", "Green Jay", "Roadrunner", "Northern Mockingbird", "Mourning Dove",
+           "Rock Dove", "Red Tailed Hawk", "Red Shouldered Hawk", "Crow", "Common Grackle"]
+for i, sp in enumerate(order10):
+    x0, y0 = 0.6 + (i % 5) * 1.62, 1.95 + (i // 5) * 2.2
+    picture(s, THUMB[sp], x0, y0, w=1.45, h=1.45)
+    text(s, x0 - 0.05, y0 + 1.5, 1.55, 0.6, [nice(sp), f"{int(counts[sp])} photos"], size=10.5, color=INK,
+         align=PP_ALIGN.CENTER, after=0, label="ds " + sp)
+segs = [("Train", 1197, BLUE, "the model learns"), ("Validation", 256, SKY, "compare models"), ("Test", 257, NIGHT, "final check, once")]
+text(s, 0.6, 6.4, 8.0, 0.4, ["Source: BIRDS 525 (Piosenka), CC0 public domain · all photos 224 × 224 color · 0 broken files, 0 duplicates"],
+     size=11, italic=True, color=MUTED, label="src3")
+y0 = 1.95
+for name_, n_, col, role in segs:
+    b = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 9.0, y0, 3.73, 1.3, fill=col, radius=0.08)
+    label_in(b, f"{name_}: {n_:,}\n{role}", size=17, color=WHITE if col != SKY else INK)
+    y0 += 1.45
 notes(s, 3)
 
-# 4 Problem & objectives
+# 4 Challenges ------------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Problem statement", "Our question: can a CNN name the bird, even when species look alike?", 4)
-q = panel(s, 0.6, 1.95, 12.13, 0.95, fill=NIGHT)
-label_in(q, "\"Can a convolutional neural network identify 10 common Texas bird species from a single photo,\nand does it struggle most with birds that look alike?\"",
-         size=18, bold=False, face=HEAD)
-chips = [("Target", "Species (10 classes)"), ("Task", "Multi-class classification"),
-         ("Unit", "One photo, 224 × 224"), ("Main metric", "Macro F1")]
-x = 0.6
-for k, v in chips:
-    panel(s, x, 3.1, 2.95, 0.95, fill=TINT)
-    text(s, x + 0.2, 3.18, 2.6, 0.3, [k.upper()], size=11, bold=True, color=BLUE)
-    text(s, x + 0.2, 3.5, 2.65, 0.5, [v], size=16, bold=True, label="chip " + k)
-    x += 3.06
-objs = ["Build a baseline before improving anything", "Improve one step at a time; report what each step does, even if it doesn't help",
-        "Evaluate the final model once, on held-out test photos", "Find where mistakes happen and what the model looks at"]
-for i, o in enumerate(objs):
-    cx = 0.6 + i * 3.06
-    c = shape(s, MSO_SHAPE.OVAL, cx, 4.35, 0.6, 0.6, fill=BLUE)
-    label_in(c, str(i + 1), size=16, face=HEAD)
-    text(s, cx + 0.72, 4.3, 2.2, 1.25, [o], size=14, label="obj" + str(i))
-panel(s, 0.6, 5.85, 12.13, 0.75, fill=SAND)
-text(s, 0.85, 5.85, 11.7, 0.75, [[("Success means: ", {"bold": True, "color": BROWN}),
-                                  ("clearly beating the baseline, and being able to explain the mistakes the model still makes.", {})]],
-     size=16, anchor=MSO_ANCHOR.MIDDLE, label="success")
+header(s, "Dataset challenges", "Lookalike birds, few photos, and hawks shot against the sky", 4, chain="Data")
+fit_picture(s, FIG / "lookalike_pairs.png", 0.6, 1.9, 6.6, 3.55, center=False)
+text(s, 0.6, 5.5, 6.5, 0.4, [[("1  Lookalike pairs: ", {"bold": True, "color": RED}), ("doves, hawks, crow vs. grackle", {})]], size=14, label="c41")
+text(s, 0.6, 5.95, 6.5, 0.4, [[("2  Small dataset: ", {"bold": True, "color": RED}), ("only ~120 training photos per bird", {})]], size=14, label="c42")
+text(s, 0.6, 6.4, 6.5, 0.4, [[("3  Mild imbalance only: ", {"bold": True, "color": BLUE}), ("142 to 212 photos per bird", {})]], size=14, label="c43")
+sk = sky.sort_values(ascending=False)
+text(s, 7.5, 1.9, 5.3, 0.35, ["Share of photo border that is blue sky"], size=13, bold=True, color=MUTED, label="skyt")
+bar_chart(s, 7.4, 2.25, 5.4, 3.75, [nice(c) for c in sk.index], [float(v) for v in sk.values],
+          [RED if "Hawk" in c else SKY for c in sk.index], fmt="0%", size=11, axis_max=0.42, gap=40)
+panel(s, 7.4, 6.05, 5.33, 0.75, fill=ROSE)
+text(s, 7.6, 6.05, 5.0, 0.75, [[("4  Background: ", {"bold": True, "color": RED}),
+                               ("hawks ≈ ⅓ sky. A model could learn \"sky = hawk\", so we checked later.", {})]],
+     size=13, anchor=MSO_ANCHOR.MIDDLE, label="surp")
 notes(s, 4)
 
-# 5 Dataset
+# 5 Preprocessing ---------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Data understanding", "1,710 photos of 10 species: clean, balanced, nothing missing", 5, chain="Data")
-order = counts.sort_values(ascending=False)
-bar_chart(s, 0.5, 1.95, 6.6, 4.75, [c for c in order.index], [int(v) for v in order.values], [BLUE] * len(order),
-          fmt="0", size=12, axis_max=260, gap=40)
-text(s, 0.6, 6.68, 6.4, 0.3, ["Photos per species (all splits). Largest ÷ smallest = 1.49"], size=11, color=MUTED, italic=True, label="cap5")
-facts = [("Source", "BIRDS 525 (Piosenka), CC0 public domain; Hugging Face mirror"),
-         ("Rows", "1,710 photos (one row = one photo)"),
-         ("Features", "Pixels: 224 × 224 × 3 colors ≈ 150,000 numbers, all numeric"),
-         ("Target", "Species label, 10 classes"),
-         ("Missing", "None: every file opened, every photo labeled")]
-y0 = 1.95
-for k, v in facts:
-    text(s, 7.4, y0, 1.3, 0.55, [k.upper()], size=11, bold=True, color=BLUE, label="fk " + k)
-    text(s, 8.65, y0, 4.1, 0.55, [v], size=14, label="fv " + k)
-    y0 += 0.58
-panel(s, 7.4, 4.95, 5.33, 1.75, fill=SAND)
-text(s, 7.6, 5.03, 5.0, 0.35, ["Quality checks"], size=15, bold=True, color=BROWN, face=HEAD)
-text(s, 7.6, 5.42, 5.0, 1.25, ["0 broken files · 0 exact duplicates",
-                               "22 outliers (1.3%): very dark, bright or high-contrast. Inspected: real photos (night sky, snow), so kept"],
-     size=13, bullets=True, bullet_color=BROWN, label="qc")
+header(s, "Preprocessing", "Four steps to get the photos ready", 5, chain="Preprocess")
+steps5 = [("1  Split", "Stratified 70 / 15 / 15\nsame share of each bird\nin every group, seed 42"),
+          ("2  Resize", "224 × 224 for the\npretrained models\n128 × 128 for the baseline"),
+          ("3  Normalize", "Baseline: pixels 0–255 → 0–1\nPretrained models:\ntheir own scaling"),
+          ("4  Augment", "Flip, rotate, zoom, contrast\ntraining photos only\ntested: didn't help")]
+x = 0.6
+for i, (h_, sub) in enumerate(steps5):
+    kind = MSO_SHAPE.PENTAGON if i == 0 else MSO_SHAPE.CHEVRON
+    c = shape(s, kind, x, 1.95, 3.15, 0.85, fill=RED if i == 3 else BLUE)
+    label_in(c, h_, size=17)
+    text(s, x + 0.35, 2.9, 2.65, 1.0, [sub], size=12.5, color=INK, after=0, label="p5 " + h_)
+    x += 3.0
+text(s, 0.6, 4.0, 12.1, 0.35, ["Augmentation examples (training photos only; validation and test photos are never changed)"], size=13, bold=True, color=MUTED, label="augt")
+fit_picture(s, FIG / "augmentation_examples.png", 0.6, 4.4, 12.1, 2.35)
 notes(s, 5)
 
-# 6 EDA
+# 6 Baseline architecture -------------------------------------------------------------------------
 s = new_slide()
-header(s, "EDA", "Two findings shaped our plan: lookalike pairs, and hawks shot against sky", 6, chain="Data")
-fit_picture(s, FIG / "lookalike_pairs.png", 0.6, 1.9, 6.6, 3.6, center=False)
-text(s, 0.6, 5.55, 6.5, 0.6, [[("Expected: ", {"bold": True, "color": RED}),
-                               ("most mistakes will fall inside these three pairs.", {})]], size=14, label="exp6")
-sk = sky.sort_values(ascending=False)
-bar_chart(s, 7.4, 2.25, 5.4, 3.75, [c for c in sk.index], [float(v) for v in sk.values],
-          [RED if "Hawk" in c else SKY for c in sk.index], fmt="0%", size=11, axis_max=0.42, gap=40)
-text(s, 7.5, 1.9, 5.3, 0.35, ["Share of photo border that is blue sky"], size=13, bold=True, color=MUTED, label="skyt")
-panel(s, 7.4, 6.05, 5.33, 0.75, fill=ROSE)
-text(s, 7.6, 6.05, 5.0, 0.75, [[("Surprise: ", {"bold": True, "color": RED}),
-                               ("hawks ≈ ⅓ sky. Risk of learning \"sky = hawk\" → we check with Grad-CAM later.", {})]],
-     size=13, anchor=MSO_ANCHOR.MIDDLE, label="surp")
-panel(s, 0.6, 6.2, 6.5, 0.6, fill=SAND)
-text(s, 0.8, 6.2, 6.2, 0.6, [[("Expected but didn't find: ", {"bold": True, "color": BROWN}),
-                              ("duplicates or broken files in web-collected data.", {})]], size=13, anchor=MSO_ANCHOR.MIDDLE, label="nofind")
-notes(s, 6)
-
-# 7 Minimum preprocessing
-s = new_slide()
-header(s, "Minimum preprocessing", "Before the baseline, only what it couldn't run without", 7, chain="Min. prep")
-steps7 = [("Quality checks", "broken, duplicate,\noutlier photos"), ("Stratified split", "70 / 15 / 15,\nseed 42"),
-          ("Resize", "128 px for the\nfrom-scratch CNN"), ("Scale pixels", "0–255 → 0–1")]
-x = 0.6
-for i, (h_, sub) in enumerate(steps7):
-    kind = MSO_SHAPE.PENTAGON if i == 0 else MSO_SHAPE.CHEVRON
-    c = shape(s, kind, x, 1.95, 3.15, 0.95, fill=BLUE)
-    label_in(c, h_, size=16)
-    text(s, x + 0.35, 2.98, 2.6, 0.6, [sub], size=13, color=MUTED, italic=True, label="s7 " + h_)
-    x += 3.0
-tot = 1710
-segs = [("Train", 1197, BLUE, "teaches the model"), ("Validation", 256, SKY, "chooses between models"), ("Test", 257, NIGHT, "used once, at the end")]
-x, W = 0.6, 7.2
-text(s, 0.6, 3.85, 7.2, 0.35, ["Our split (the original test set had only 5 photos per species)"], size=14, bold=True, label="splt")
-for name, n, col, role in segs:
-    w = W * n / tot
-    b = shape(s, MSO_SHAPE.RECTANGLE, x, 4.3, w, 0.8, fill=col)
-    label_in(b, f"{name}\n{n:,}" if w > 1.2 else f"{n}", size=14, color=WHITE if col != SKY else INK)
-    x += w
-for i, (name, n, col, role) in enumerate(segs):
-    lx = 0.6 + i * 2.45
-    shape(s, MSO_SHAPE.RECTANGLE, lx, 5.27, 0.22, 0.22, fill=col)
-    text(s, lx + 0.32, 5.2, 2.1, 0.55, [[(name + ": ", {"bold": True}), (role, {})]], size=12, color=INK, label="role " + name)
-text(s, 0.6, 5.85, 7.2, 0.9, ["Stratified: every species keeps the same share in each split (~25 test photos per bird). No photo appears in two splits."],
-     size=13, label="strat")
-panel(s, 8.15, 3.85, 4.58, 2.9, fill=SAND)
-text(s, 8.35, 3.95, 4.2, 0.35, ["Held back for later (slides 9–10)"], size=15, bold=True, color=BROWN, face=HEAD, label="hb")
-text(s, 8.35, 4.4, 4.2, 2.3, ["Data augmentation", "Full 224 px + ImageNet pixel scaling (−1…1)", "Pretrained features",
-                              ], size=14, bullets=True, bullet_color=BROWN, label="hbl")
-text(s, 8.35, 5.85, 4.2, 0.8, ["So each step's effect can be measured on its own."], size=13, italic=True, color=MUTED, label="hbl2")
-notes(s, 7)
-
-# ======================================================================= TEJ 8-13
-# 8 Baseline
-s = new_slide()
-header(s, "Baseline", "Our baseline CNN gets 61%: far above guessing, but 4 in 10 birds wrong", 8, chain="Baseline")
+header(s, "Baseline model", "Our baseline: a small CNN built and trained from scratch", 6, chain="Baseline")
 blocks = [("Photo", "128×128×3"), ("Conv 32", "+ pool"), ("Conv 64", "+ pool"), ("Conv 128", "+ pool"), ("Conv 128", "+ pool"),
-          ("Avg + dropout", "30%"), ("Softmax", "10 birds")]
+          ("Avg pool +\ndropout 30%", ""), ("Softmax", "10 birds")]
 x = 0.6
 for i, (a, b) in enumerate(blocks):
-    col = NIGHT if i in (0, 6) else BLUE
-    c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 2.0, 1.5, 1.0, fill=col, radius=0.12)
-    label_in(c, f"{a}\n{b}", size=13)
+    c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 2.1, 1.5, 1.15, fill=NIGHT if i in (0, 6) else BLUE, radius=0.12)
+    label_in(c, f"{a}\n{b}".strip(), size=13)
     if i < len(blocks) - 1:
-        text(s, x + 1.5, 2.0, 0.27, 1.0, ["→"], size=18, bold=True, color=GRAY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="arr")
+        text(s, x + 1.5, 2.1, 0.27, 1.15, ["→"], size=18, bold=True, color=GRAY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="arr")
     x += 1.77
-text(s, 0.6, 3.1, 12.1, 0.4, ["Simple CNN: filters find edges → textures → beaks and wings; pooling shrinks the image between blocks. 242,122 weights, trained from scratch."],
-     size=13, color=MUTED, italic=True, label="cnncap")
-cards = [("Majority guess", "always \"Red-tailed Hawk\"", V["0. Majority guess"]["F1"], GRAY, "12.5% accuracy"),
-         ("Baseline CNN", "minimum preprocessing only", V["1. Baseline CNN"]["F1"], BROWN, "60.9% accuracy")]
-for i, (h_, sub, val, col, acc) in enumerate(cards):
-    x0 = 0.6 + i * 3.4
-    panel(s, x0, 3.75, 3.2, 2.95, fill=SAND if i else RGBColor(0xF1, 0xF3, 0xF5))
-    text(s, x0 + 0.2, 3.85, 2.9, 0.35, [h_], size=16, bold=True, face=HEAD, label="c8 " + h_)
-    text(s, x0 + 0.2, 4.22, 2.9, 0.35, [sub], size=12, italic=True, color=MUTED, label="c8s " + h_)
-    text(s, x0 + 0.2, 4.6, 2.9, 1.0, [f2(val)], size=48, bold=True, color=col, face=HEAD, label="c8v " + h_)
-    text(s, x0 + 0.2, 5.65, 2.9, 0.9, ["validation macro F1", acc], size=13, color=MUTED, label="c8a " + h_)
-panel(s, 7.55, 3.75, 5.18, 2.95, fill=TINT)
-text(s, 7.75, 3.85, 4.8, 0.35, ["Why macro F1?"], size=16, bold=True, color=BLUE, face=HEAD)
-text(s, 7.75, 4.3, 4.8, 2.35, ["F1 balances precision and recall for each species", "Macro = average over all 10 species equally",
-                               "A model can't score well by ignoring one bird",
-                               "CNN assumes: nearby pixels are related; a pattern means the same anywhere"],
-     size=14, bullets=True, label="why8")
+text(s, 0.6, 3.4, 12.1, 0.4, ["Each convolution block finds patterns (edges → textures → beaks and wings); pooling shrinks the image between blocks."],
+     size=14, color=MUTED, italic=True, label="cnncap")
+cards6 = [("242,122", "weights, all trained"), ("Adam", "optimizer, learning rate 0.001"), ("32", "photos per batch"),
+          ("30", "epochs max, early stopping")]
+for i, (big, small_) in enumerate(cards6):
+    x0 = 0.6 + i * 3.06
+    panel(s, x0, 4.2, 2.9, 1.5, fill=SAND)
+    text(s, x0 + 0.15, 4.3, 2.6, 0.7, [big], size=30, bold=True, color=BROWN, face=HEAD, align=PP_ALIGN.CENTER, label="c6 " + big)
+    text(s, x0 + 0.15, 5.05, 2.6, 0.6, [small_], size=13, color=MUTED, align=PP_ALIGN.CENTER, label="c6s " + big)
+text(s, 0.6, 6.0, 12.1, 0.7, ["Minimum preprocessing only: resize to 128 px and scale pixels to 0–1. Loss: cross-entropy; output: 10 probabilities that add up to 100%."],
+     size=14, label="min6")
+notes(s, 6)
+
+# 7 Baseline results
+results_slide(7, "Baseline CNN", "The baseline gets about 7 in 10 birds right, but mixes up lookalikes",
+              MAIN["Baseline CNN"], BROWN, SAND, ("81", "mistakes out of 257", RED, ROSE),
+              "Training and validation stay close (no overfitting), but accuracy is low: too few photos to learn from scratch.")
+
+# 8 Transfer learning -----------------------------------------------------------------------------
+s = new_slide()
+header(s, "Transfer learning", "Two pretrained models, used for feature extraction", 8, chain="Transfer")
+flow = [("Pretrained on ImageNet\n~1.3 million photos", NIGHT), ("Pretrained layers\nFROZEN (not changed)", BLUE),
+        ("Old 1,000-class layer\nremoved", GRAY), ("New layer for\nour 10 birds: TRAINED", BROWN)]
+x = 0.6
+for i, (t_, col) in enumerate(flow):
+    c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.95, 2.75, 1.1, fill=col, radius=0.1)
+    label_in(c, t_, size=13.5, color=WHITE if col != GRAY else INK)
+    if i < 3:
+        text(s, x + 2.75, 1.95, 0.4, 1.1, ["→"], size=20, bold=True, color=GRAY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="a8")
+    x += 3.13
+rows8 = [["", "MobileNetV2", "ResNet50"],
+         ["Design", "Small and fast, built for phones", "Deep (50 layers), skip connections"],
+         ["Pretrained weights (frozen)", "~2.3 million", "~23.6 million"],
+         ["Features per photo", "1,280", "2,048"],
+         ["Weights we trained", "12,810", "20,490"],
+         ["Pixel scaling", "−1 to 1", "ImageNet color average subtracted"],
+         ["Training time (laptop)", "~3 minutes", "~13 minutes"]]
+table(s, 0.6, 3.35, rows8, col_w=[2.6, 2.9, 3.3], row_h=0.48, size=13)
+panel(s, 9.65, 3.35, 3.08, 3.36, fill=ROSE)
+text(s, 9.85, 3.45, 2.7, 0.4, ["Also tried"], size=15, bold=True, color=RED, face=HEAD, label="at")
+text(s, 9.85, 3.9, 2.7, 2.75, ["Fine-tuning MobileNetV2 (retraining its top 30 or 60 layers): no better than frozen",
+                               "Augmentation with MobileNetV2: no better",
+                               "So both final models are frozen, no augmentation"], size=12.5, bullets=True, bullet_color=RED, after=6, label="atb")
 notes(s, 8)
 
-# 9 Augmentation
-s = new_slide()
-header(s, "Additional preprocessing", "Data augmentation did not help, for either model", 9, chain="Improve")
-fit_picture(s, FIG / "augmentation_examples.png", 0.6, 1.9, 12.1, 2.25)
-text(s, 0.6, 4.2, 12.1, 0.35, ["Training photos only: random flip · rotation ±36° · zoom ±10% · contrast ±20%. Validation and test photos are never changed."],
-     size=13, color=MUTED, italic=True, align=PP_ALIGN.CENTER, label="augcap")
-res9 = [("Simple CNN", V["1. Baseline CNN"]["F1"], V["2. CNN + augmentation"]["F1"]),
-        ("MobileNetV2 (slide 10)", V["3b. MobileNetV2 frozen, no augmentation"]["F1"], V["3. MobileNetV2 frozen"]["F1"])]
-for i, (h_, without, with_) in enumerate(res9):
-    x0 = 0.6 + i * 4.25
-    panel(s, x0, 4.75, 4.05, 1.95, fill=ROSE)
-    text(s, x0 + 0.2, 4.83, 3.7, 0.35, [h_], size=15, bold=True, face=HEAD, label="r9 " + h_)
-    text(s, x0 + 0.2, 5.25, 1.7, 0.35, ["without"], size=12, color=MUTED, label="wo")
-    text(s, x0 + 2.05, 5.25, 1.7, 0.35, ["with augmentation"], size=12, color=MUTED, label="wi")
-    text(s, x0 + 0.2, 5.6, 1.7, 0.8, [f3(without)], size=34, bold=True, color=BLUE, face=HEAD, label="wov")
-    text(s, x0 + 2.05, 5.6, 1.8, 0.8, [f3(with_)], size=34, bold=True, color=RED, face=HEAD, label="wiv")
-text(s, 0.6, 6.72, 8.2, 0.3, ["Validation macro F1"], size=11, color=MUTED, italic=True, label="v9")
-panel(s, 9.15, 4.75, 3.58, 1.95, fill=SAND)
-text(s, 9.35, 4.83, 3.2, 1.85, [[("Why? ", {"bold": True, "color": BROWN}),
-                                ("~120 photos per bird; random changes make learning from scratch harder. Photos are already clean and centered.", {})]],
-     size=13, label="why9")
-notes(s, 9)
+# 9-10 Transfer results
+results_slide(9, "MobileNetV2", "MobileNetV2 gets 96% right, 28 points above the baseline",
+              MAIN["MobileNetV2"], BLUE, TINT, (f"+{(mob_t['accuracy'] - base_t['accuracy']) * 100:.1f}", "points vs. baseline", BLUE, TINT),
+              "Training and validation stay close: very little overfitting. Lowest scores: hawks and crow/grackle.")
+results_slide(10, "ResNet50", "ResNet50 gets 98% right, our strongest model",
+              MAIN["ResNet50"], GREEN_, RGBColor(0xE8, 0xF4, 0xEC),
+              (f"+{(res_t['accuracy'] - base_t['accuracy']) * 100:.1f}", "points vs. baseline", GREEN_, RGBColor(0xE8, 0xF4, 0xEC)),
+              "Training accuracy nears 100% while validation stays ~96–97%: a little overfitting, kept in check by dropout and early stopping.")
 
-# 10 Transfer learning as feature engineering
+# 11 All models compared --------------------------------------------------------------------------
 s = new_slide()
-header(s, "Feature engineering", "Swapping in pretrained features took F1 from 0.61 to 0.96", 10, chain="Improve")
-lanes = [("From scratch (baseline)", ["~1,200 of our photos", "learn features\nfrom scratch", "242,122 weights\ntrained"], V["1. Baseline CNN"]["F1"], BROWN, SAND),
-         ("Transfer learning", ["~1.3 million\nImageNet photos", "MobileNetV2 features\n(frozen)", "new 10-bird layer:\n12,810 weights trained"],
-          V["3b. MobileNetV2 frozen, no augmentation"]["F1"], BLUE, TINT)]
-for r, (name, boxes_, val, col, fill) in enumerate(lanes):
-    y0 = 2.0 + r * 2.05
-    panel(s, 0.6, y0, 12.13, 1.8, fill=fill)
-    text(s, 0.8, y0 + 0.1, 3.0, 0.35, [name], size=15, bold=True, color=col, face=HEAD, label="lane " + name)
-    x = 0.8
-    for i, b in enumerate(boxes_):
-        c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, y0 + 0.55, 2.55, 1.05, fill=WHITE, line=col, radius=0.12, lw=1.25)
-        label_in(c, b, size=13, color=INK, bold=False)
-        text(s, x + 2.55, y0 + 0.55, 0.4, 1.05, ["→"], size=20, bold=True, color=col, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, label="a10")
-        x += 2.95
-    text(s, 9.75, y0 + 0.3, 2.8, 0.9, [f2(val)], size=44, bold=True, color=col, face=HEAD, align=PP_ALIGN.CENTER, label="v10")
-    text(s, 9.75, y0 + 1.2, 2.8, 0.35, ["validation macro F1"], size=12, color=MUTED, align=PP_ALIGN.CENTER, label="v10c")
-text(s, 0.6, 6.2, 12.1, 0.7, ["Images have no hand-made columns: the CNN learns its own features. Our feature decision was where they come from. Same photos, split and metric; only the features changed."],
-     size=14, color=INK, label="fe10")
-notes(s, 10)
-
-# 11 Model selection
-s = new_slide()
-header(s, "Model selection", "Two model families, each with a clear reason to be there", 11, chain="Models")
-rows = [["", "Why we chose it", "Strengths", "Limitations", "Preprocessing"],
-        ["Simple CNN", "Standard first model for images; honest baseline", "Transparent; small; trains from scratch", "Needs far more data than ~120 photos/bird", "128 px, pixels 0–1"],
-        ["MobileNetV2, frozen", "Small, fast pretrained CNN built for phones", "Strong features from little data; ~4 min on a laptop", "Assumes ImageNet features transfer; inherits its biases", "224 px, pixels −1…1"],
-        ["MobileNetV2, fine-tuned", "Let top layers adapt to our 10 birds", "More flexible", "1.5M trainable weights → overfits small data", "Same, very small learning rate"]]
-table(s, 0.6, 1.95, rows, col_w=[2.25, 2.55, 2.55, 2.75, 2.03], row_h=0.95, size=14)
-panel(s, 0.6, 5.95, 12.13, 0.8, fill=SAND)
-text(s, 0.85, 5.95, 11.7, 0.8, [[("Why not logistic regression or random forest? ", {"bold": True, "color": BROWN}),
-                                 ("On raw pixels they treat 49,152 pixels as unrelated columns and ignore the image's 2-D structure.", {})]],
-     size=14, anchor=MSO_ANCHOR.MIDDLE, label="whynot")
+header(s, "Evaluation", "Both pretrained models beat our CNN by about 30 points", 11, chain="Results")
+rows11 = [["Model (257 test photos)", "Accuracy", "Loss", "Precision", "Recall", "F1", "Val. F1", "Mistakes"]]
+mistakes = {"1. Baseline CNN": 81, "3b. MobileNetV2 frozen, no augmentation": 10, "3c. ResNet50 frozen, no augmentation": 5}
+show11 = [("Baseline CNN (from scratch)", "1. Baseline CNN"), ("Baseline CNN + augmentation", "2. CNN + augmentation"),
+          ("MobileNetV2 (frozen)", "3b. MobileNetV2 frozen, no augmentation"), ("MobileNetV2, fine-tuned", "5. Fine-tuned (tuned)"),
+          ("ResNet50 (frozen), best", "3c. ResNet50 frozen, no augmentation")]
+for lab_, k in show11:
+    m_ = T[k]
+    cm_ = round((1 - m_["accuracy"]) * 257)
+    rows11.append([lab_, f"{m_['accuracy']:.1%}", f"{m_['loss']:.3f}", f"{m_['precision']:.3f}", f"{m_['recall']:.3f}",
+                   f"{m_['F1']:.3f}", f"{V[k]['F1']:.3f}", str(cm_)])
+fills11 = {(1, j): (SAND, INK) for j in range(8)}
+table(s, 0.6, 1.95, rows11, col_w=[3.55, 1.25, 1.1, 1.25, 1.1, 1.0, 1.1, 1.25], row_h=0.55, size=14, highlight=5, fills=fills11)
+text(s, 0.6, 5.35, 12.1, 0.35, ["Precision, recall and F1 are averages over the 10 species. Baseline row shaded; best row highlighted."],
+     size=11, italic=True, color=MUTED, label="cap11")
+panel(s, 0.6, 5.8, 12.13, 0.95, fill=TINT)
+text(s, 0.85, 5.8, 11.7, 0.95, [[("Validation vs. test: ", {"bold": True, "color": BLUE}),
+                                 ("on validation the two pretrained models tied (F1 0.964 vs. 0.965); on the test set ResNet50 pulled ahead with half the mistakes.", {})]],
+     size=14, anchor=MSO_ANCHOR.MIDDLE, label="vt11")
 notes(s, 11)
 
-# 12 Model improvement ladder
+# 12 Confusion matrices ---------------------------------------------------------------------------
 s = new_slide()
-header(s, "Model improvement", "Every step changes one thing; only transfer learning moved the needle", 12, chain="Improve")
-lab12 = ["Majority\nguess", "Baseline\nCNN", "CNN +\naugmentation", "MobileNetV2\n+ augmentation", "MobileNetV2\n(no aug.) FINAL", "Fine-tuned\n(default)", "Fine-tuned\n(tuned)"]
-cols12 = [GRAY, BROWN, RED, SKY, BLUE, SKY, SKY]
-bar_chart(s, 0.5, 1.9, 8.4, 4.9, lab12, [float(V[k]["F1"]) for k in STEPS], cols12, fmt="0.000", horizontal=False,
-          size=12, axis_max=1.1, gap=45)
-text(s, 0.6, 6.78, 8.2, 0.3, ["Validation macro F1 · dark blue = final model · red = a step that made things worse"], size=11, color=MUTED, italic=True, label="cap12")
-call = [("Helped", "Pretrained MobileNetV2 features: 0.608 → 0.956", BLUE, TINT),
-        ("Didn't help", "Augmentation (both models) and fine-tuning", RED, ROSE),
-        ("Surprise", "Fine-tuning stopped after ~4 epochs: validation loss rose right away. 1.5M weights + 1,200 photos = memorizing", BROWN, SAND)]
-y0 = 1.95
-for h_, b_, col, fill in call:
-    hh = 1.55 if h_ == "Surprise" else 1.25
-    panel(s, 9.15, y0, 3.58, hh, fill=fill)
-    text(s, 9.35, y0 + 0.08, 3.2, 0.35, [h_], size=15, bold=True, color=col, face=HEAD, label="ch " + h_)
-    text(s, 9.35, y0 + 0.45, 3.2, hh - 0.5, [b_], size=13, label="cb " + h_)
-    y0 += hh + 0.2
+header(s, "Confusion matrices", "The best models only mix up the lookalike pairs", 12, chain="Results")
+fit_picture(s, FIG / "confusion_matrices_all.png", 0.6, 1.85, 12.13, 3.95)
+cards12 = [("81", "Baseline CNN: mistakes spread everywhere (15 red-tailed hawks called red-shouldered)", BROWN, SAND),
+           ("10", "MobileNetV2: all 10 inside lookalike pairs (5 hawks, 4 crow/grackle, 1 dove)", BLUE, TINT),
+           ("5", "ResNet50: 2 hawks, 2 crow/grackle, 1 roadrunner called a mockingbird", GREEN_, RGBColor(0xE8, 0xF4, 0xEC))]
+for i, (big, small_, col, fill) in enumerate(cards12):
+    x0 = 0.6 + i * 4.1
+    panel(s, x0, 5.9, 3.93, 0.95, fill=fill)
+    text(s, x0 + 0.12, 5.9, 0.85, 0.95, [big], size=28, bold=True, color=col, face=HEAD, anchor=MSO_ANCHOR.MIDDLE, label="b12")
+    text(s, x0 + 1.0, 5.9, 2.85, 0.95, [small_], size=11.5, anchor=MSO_ANCHOR.MIDDLE, label="s12 " + big)
 notes(s, 12)
 
-# 13 Tuning
+# 13 Strongest model --------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Hyperparameter tuning", "Tuning on validation picked the default settings: no gain", 13, chain="Models")
-grid = {(g["unfrozen layers"], g["learning rate"]): g["val F1"] for g in R["tuning_grid"]}
-best = max(grid.values())
-text(s, 0.6, 1.95, 6.0, 0.4, ["Grid search: 2 × 2 = 4 runs, validation macro F1"], size=15, bold=True, label="g13")
-text(s, 2.35, 2.45, 4.4, 0.35, ["Learning rate"], size=13, color=MUTED, align=PP_ALIGN.CENTER, label="lr")
-for j, lr in enumerate(["1e-05", "3e-05"]):
-    text(s, 2.35 + j * 2.2, 2.8, 2.1, 0.35, [lr.replace("e-05", "e-5")], size=14, bold=True, align=PP_ALIGN.CENTER, label="lrv")
-for i, nl in enumerate([30, 60]):
-    text(s, 0.6, 3.25 + i * 1.35, 1.65, 1.2, [f"Top {nl}\nlayers"], size=14, bold=True, anchor=MSO_ANCHOR.MIDDLE, label="nl")
-    for j, lr in enumerate(["1e-05", "3e-05"]):
-        v = grid[(nl, lr)]
-        isbest = abs(v - best) < 1e-9
-        c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 2.35 + j * 2.2, 3.25 + i * 1.35, 2.1, 1.2,
-                  fill=BLUE if isbest else (TINT if lr == "1e-05" else ROSE), radius=0.08)
-        label_in(c, f"{v:.3f}" + ("\nbest = default" if isbest else ""), size=20 if not isbest else 18,
-                 color=WHITE if isbest else INK, face=HEAD)
-text(s, 0.6, 5.95, 6.0, 0.8, ["Each run starts from the same frozen model and is scored on validation only. The test set never chose anything."],
-     size=13, color=MUTED, italic=True, label="fair13")
-why13 = [("Unfrozen layers (30 vs. 60)", "More layers = more flexibility, but more risk of overfitting ~1,200 photos"),
-         ("Learning rate (1e-5 vs. 3e-5)", "Too high wrecks the pretrained weights; too low barely changes them")]
-y0 = 1.95
-for h_, b_ in why13:
-    panel(s, 7.2, y0, 5.53, 1.15, fill=TINT)
-    text(s, 7.4, y0 + 0.08, 5.1, 0.35, [h_], size=15, bold=True, color=BLUE, face=HEAD, label="w13 " + h_)
-    text(s, 7.4, y0 + 0.45, 5.1, 0.65, [b_], size=13, label="w13b " + h_)
-    y0 += 1.3
-panel(s, 7.2, 4.65, 5.53, 2.1, fill=SAND)
-text(s, 7.4, 4.73, 5.1, 0.35, ["Before vs. after tuning"], size=15, bold=True, color=BROWN, face=HEAD)
-text(s, 7.4, 5.15, 5.1, 1.55, [f"Default (30 layers, 1e-5): {grid[(30, '1e-05')]:.3f}",
-                              f"Best of grid: {best:.3f}, the same setting",
-                              "Higher learning rate hurt: 0.931–0.939",
-                              f"Still below the frozen model ({V['3b. MobileNetV2 frozen, no augmentation']['F1']:.3f})"],
-     size=13, bullets=True, bullet_color=BROWN, label="ba13")
+header(s, "Strongest model", "Why ResNet50 worked best, and why MobileNetV2 is close behind", 13, chain="Results")
+cols13 = [("Why ResNet50 is strongest", GREEN_, RGBColor(0xE8, 0xF4, 0xEC),
+           ["Much deeper network (50 layers)", "Describes each photo with 2,048 features vs. 1,280", "Catches small details: a hawk's chest, a grackle's eye",
+            f"98.1% accuracy, lowest loss ({res_t['loss']:.3f}), 5 mistakes"]),
+          ("Why both beat our CNN", BLUE, TINT,
+           ["Already learned feathers, eyes, beaks from ~1.3 million photos", "Our CNN had only ~1,200 photos to learn from",
+            "Frozen layers can't overfit our small dataset"]),
+          ("The trade-off", BROWN, SAND,
+           ["MobileNetV2 is ~10× smaller and ~4× faster", "Almost as accurate (96.1%)", "ResNet50 if accuracy matters most; MobileNetV2 for a phone app"])]
+for i, (h_, col, fill, items) in enumerate(cols13):
+    x0 = 0.6 + i * 4.1
+    panel(s, x0, 1.95, 3.93, 4.8, fill=fill)
+    text(s, x0 + 0.22, 2.08, 3.5, 0.75, [h_], size=17, bold=True, color=col, face=HEAD, label="h13 " + h_)
+    text(s, x0 + 0.22, 2.9, 3.5, 3.75, items, size=16, bullets=True, bullet_color=col, after=12, label="i13 " + h_)
 notes(s, 13)
 
-# ======================================================================= ALEJANDRO 14-21
-# 14 Comparison
+# 14 Grad-CAM + why not perfect --------------------------------------------------------------------
 s = new_slide()
-header(s, "Evaluation", "On 257 unseen test photos, the final model is right 96% of the time", 14, chain="Evaluate")
-names14 = {"0. Majority guess": "Majority guess", "1. Baseline CNN": "Baseline CNN", "2. CNN + augmentation": "CNN + augmentation",
-           "3. MobileNetV2 frozen": "MobileNetV2 + augmentation", "3b. MobileNetV2 frozen, no augmentation": "MobileNetV2, no aug. (FINAL)",
-           "4. Fine-tuned (default)": "Fine-tuned (default)", "5. Fine-tuned (tuned)": "Fine-tuned (tuned)"}
-rows = [["Model (test set)", "Accuracy", "Precision", "Recall", "F1", "ROC-AUC", "Val. F1"]]
-for k in STEPS:
-    m = T[k]
-    rows.append([names14[k], f"{m['accuracy']:.1%}", f3(m["precision"]), f3(m["recall"]), f3(m["F1"]), f3(m["ROC-AUC"]), f3(V[k]["F1"])])
-hl = STEPS.index(FINAL) + 1
-fills = {(2, j): (SAND, INK) for j in range(7)}
-table(s, 0.6, 1.95, rows, col_w=[3.3, 1.35, 1.35, 1.35, 1.35, 1.35, 1.35], row_h=0.5, size=14, highlight=hl, fills=fills)
-text(s, 0.6, 6.0, 7.9, 0.3, ["Precision, recall, F1, ROC-AUC = macro averages over the 10 species. Baseline row shaded."], size=11, color=MUTED, italic=True, label="cap14")
-panel(s, 0.6, 6.32, 12.13, 0.6, fill=TINT)
-text(s, 0.85, 6.32, 11.7, 0.6, [[("Chosen on validation, before this table: ", {"bold": True, "color": BLUE}),
-                                 ("highest validation F1; ties (≤ 0.005) go to the simpler model. The final model was best and simplest.", {})]],
-     size=13, anchor=MSO_ANCHOR.MIDDLE, label="rule14")
-notes(s, 14)
-
-# 15 Errors
-s = new_slide()
-header(s, "Interpretation", "All 10 mistakes are between lookalike species, just as we expected", 15, chain="Evaluate")
-fit_picture(s, FIG / "confusion_matrix.png", 0.4, 1.8, 6.1, 5.2, center=False)
-er = R["errors"]
-stats15 = [("10", "mistakes out of 257 test photos", RED), ("10 / 10", "inside a lookalike pair:\n5 hawks · 4 crow/grackle · 1 dove", RED),
-           ("81", "baseline mistakes, 49 outside the pairs", BROWN)]
-y0 = 1.95
-for big, small, col in stats15:
-    text(s, 6.75, y0, 1.75, 0.7, [big], size=30, bold=True, color=col, face=HEAD, label="b15")
-    text(s, 8.55, y0 + 0.05, 4.2, 0.75, [small], size=13, label="s15")
-    y0 += 0.82
-fit_picture(s, FIG / "mistakes.png", 6.75, 4.45, 5.98, 2.0, center=False)
-text(s, 6.75, 6.5, 5.98, 0.45, ["7 of 10 mistakes had confidence under 65%: the model is usually unsure when wrong."],
-     size=12, italic=True, color=MUTED, label="conf15")
-notes(s, 15)
-
-# 16 Grad-CAM
-s = new_slide()
-header(s, "Interpretation", "The model looks at the bird, not the sky", 16, chain="Evaluate")
+header(s, "Interpretation", "The model looks at the bird, not the sky", 14, chain="Results")
 fit_picture(s, FIG / "gradcam.png", 0.6, 1.8, 12.13, 3.95)
 gb = R["gradcam_border_share"]
-panel(s, 0.6, 5.85, 7.6, 1.0, fill=TINT)
-text(s, 0.8, 5.85, 7.25, 1.0, [[("Across all 257 test photos: ", {"bold": True, "color": BLUE}),
-                                (f"the outer frame is 49% of each image but gets only {min(gb.values()):.0%}–{max(gb.values()):.0%} of the heatmap. "
-                                 f"Hawks: {gb['Red Tailed Hawk']:.0%} and {gb['Red Shouldered Hawk']:.0%}.", {})]],
-     size=13, anchor=MSO_ANCHOR.MIDDLE, label="gb16")
-panel(s, 8.4, 5.85, 4.33, 1.0, fill=ROSE)
-text(s, 8.6, 5.85, 4.0, 1.0, [[("Exception: ", {"bold": True, "color": RED}),
-                              ("the rock dove (far right) looks like a different pigeon: possible label error.", {})]],
-     size=13, anchor=MSO_ANCHOR.MIDDLE, label="exc16")
-notes(s, 16)
+panel(s, 0.6, 5.85, 6.0, 1.0, fill=TINT)
+text(s, 0.8, 5.85, 5.65, 1.0, [[("Grad-CAM (MobileNetV2): ", {"bold": True, "color": BLUE}),
+                                (f"red = what mattered. The photo's outer edge is 49% of the area but gets only {min(gb.values()):.0%}–{max(gb.values()):.0%} of the heat.", {})]],
+     size=13, anchor=MSO_ANCHOR.MIDDLE, label="gb14")
+panel(s, 6.8, 5.85, 5.93, 1.0, fill=ROSE)
+text(s, 7.0, 5.85, 5.6, 1.0, [[("Why not perfect: ", {"bold": True, "color": RED}),
+                              ("true lookalikes (a hawk from behind, a grackle in dull light) and a few likely mislabeled photos.", {})]],
+     size=13, anchor=MSO_ANCHOR.MIDDLE, label="np14")
+notes(s, 14)
 
-# 17 Key findings
+# 15 Lessons learned ---------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Key findings", "Yes: a pretrained CNN names these birds, and fails only on true lookalikes", 17)
-kf = [("1", "Baseline", "Simple CNN: macro F1 0.61, far above guessing (0.02), but 4 in 10 birds wrong."),
-      ("2", "What helped", "Transfer learning gave essentially the whole gain (0.61 → 0.96). Augmentation and fine-tuning didn't help."),
-      ("3", "Final model", "Frozen MobileNetV2: 96.1% test accuracy, macro F1 0.964."),
-      ("4", "Mistakes", "All 10 errors are between lookalikes, and the model looks at the bird, not the sky.")]
-for i, (n, h_, b_) in enumerate(kf):
+header(s, "Lessons learned", "What this project taught us", 15)
+lessons = [("1", "Transfer learning matters most", "Pretrained models beat our CNN by about 30 points. Reusing knowledge beats starting from zero."),
+           ("2", "Overfitting", "We watched the train vs. validation curves. Dropout, frozen layers and early stopping kept the gap small."),
+           ("3", "Slow training", "No GPU: we trained on a laptop, kept the baseline small and limited the CPU so it didn't overheat."),
+           ("4", "Test one change at a time", "Augmentation and fine-tuning, which we expected to help, didn't. We only knew because we tested them separately.")]
+for i, (n_, h_, b_) in enumerate(lessons):
     x0, y0 = 0.6 + (i % 2) * 6.15, 1.95 + (i // 2) * 1.85
     panel(s, x0, y0, 5.98, 1.65, fill=TINT)
     c = shape(s, MSO_SHAPE.OVAL, x0 + 0.2, y0 + 0.2, 0.55, 0.55, fill=BLUE)
-    label_in(c, n, size=15, face=HEAD)
-    text(s, x0 + 0.95, y0 + 0.2, 4.8, 0.4, [h_], size=16, bold=True, color=BLUE, face=HEAD, label="kf " + h_)
-    text(s, x0 + 0.95, y0 + 0.62, 4.85, 1.0, [b_], size=14, label="kfb " + h_)
-panel(s, 0.6, 5.75, 12.13, 1.05, fill=NIGHT)
-text(s, 0.85, 5.75, 11.7, 1.05, [[("The insight: ", {"bold": True, "color": SKY}),
-                                  ("with small data, reusing what a big model already learned beat everything we tuned ourselves.", {"color": WHITE})]],
-     size=17, anchor=MSO_ANCHOR.MIDDLE, face=HEAD, label="insight")
-notes(s, 17)
+    label_in(c, n_, size=15, face=HEAD)
+    text(s, x0 + 0.95, y0 + 0.2, 4.8, 0.4, [h_], size=16, bold=True, color=BLUE, face=HEAD, label="lh " + h_)
+    text(s, x0 + 0.95, y0 + 0.62, 4.85, 1.0, [b_], size=14, label="lb " + h_)
+panel(s, 0.6, 5.75, 12.13, 1.05, fill=ROSE)
+text(s, 0.85, 5.75, 11.7, 1.05, [[("Limits: ", {"bold": True, "color": RED}),
+                                  ("our photos are clean and centered, so 98% here won't mean 98% on blurry backyard photos, and the model only knows these 10 birds.", {})]],
+     size=15, anchor=MSO_ANCHOR.MIDDLE, label="lim15")
+notes(s, 15)
 
-# 18 Limitations
+# 16 References -----------------------------------------------------------------------------------
 s = new_slide()
-header(s, "Limitations", "96% here does not mean 96% in a Texas backyard", 18)
-lim = [("Clean, web-sourced photos", "Cropped and centered; real backyard or trail-camera photos are blurrier and farther away."),
-       ("Only 10 species", "The model always picks one of the 10. Show it a penguin and it names a Texas bird."),
-       ("Label noise", "A few photos look mislabeled (a 'mourning dove' with a collared dove's neck ring)."),
-       ("Small test set, one split", "~25 photos per species: one photo moves a species' score by ~4 points."),
-       ("Inherited bias", "MobileNetV2 brings ImageNet's biases; Grad-CAM shows where it looks, not why.")]
-for i, (h_, b_) in enumerate(lim):
-    y0 = 1.95 + i * 0.97
-    shape(s, MSO_SHAPE.RECTANGLE, 0.6, y0, 0.08, 0.82, fill=RED)
-    text(s, 0.9, y0, 3.6, 0.82, [h_], size=16, bold=True, face=HEAD, anchor=MSO_ANCHOR.MIDDLE, label="lh " + h_)
-    text(s, 4.6, y0, 8.1, 0.82, [b_], size=15, anchor=MSO_ANCHOR.MIDDLE, label="lb " + h_)
-notes(s, 18)
-
-# 19 Conclusion
-s = new_slide()
-header(s, "Conclusion", "A small pretrained model was enough; the hard part is the lookalikes", 19)
-panel(s, 0.6, 1.95, 6.2, 4.85, fill=TINT)
-text(s, 0.85, 2.05, 5.8, 0.4, ["Summary"], size=17, bold=True, color=BLUE, face=HEAD)
-text(s, 0.85, 2.5, 5.8, 2.0, ["Question: can a CNN tell 10 Texas birds apart from one photo?",
-                              "Final model: frozen MobileNetV2, 96.1% on test vs. 68.5% for our baseline",
-                              "Only mistakes: genuine lookalikes",
-                              "In practice: useful for beginners and citizen science, if it says \"not sure\" when unsure"],
-     size=14, bullets=True, label="sum19")
-text(s, 0.85, 4.75, 5.8, 0.4, ["Future work"], size=17, bold=True, color=BLUE, face=HEAD)
-text(s, 0.85, 5.2, 5.8, 1.55, ["Test on real Texas backyard photos", "More species + an \"unknown bird\" option",
-                              "Add location and date, like Merlin"], size=14, bullets=True, label="fw19")
-panel(s, 7.05, 1.95, 5.68, 4.85, fill=SAND)
-text(s, 7.3, 2.05, 5.2, 0.4, ["What we learned"], size=17, bold=True, color=BROWN, face=HEAD)
-text(s, 7.3, 2.55, 5.2, 4.2, ["Bigger isn't automatically better: the simplest transfer-learning model won.",
-                              "Steps we were sure would help (augmentation, fine-tuning) didn't. Testing one change at a time is how we found out.",
-                              "A high score isn't enough: we had to check what the model was looking at."],
-     size=15, bullets=True, bullet_color=BROWN, after=10, label="learn19")
-notes(s, 19)
-
-# 20 References
-s = new_slide()
-header(s, "References", "References (APA)", 20)
+header(s, "References", "References (APA)", 16)
 refs = ["Abadi, M., et al. (2015). TensorFlow: Large-scale machine learning on heterogeneous systems. https://www.tensorflow.org",
         "Cornell Lab of Ornithology. (n.d.). Merlin Bird ID [Mobile app]. https://merlin.allaboutbirds.org",
-        "Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., & Wichmann, F. A. (2020). Shortcut learning in deep neural networks. Nature Machine Intelligence, 2(11), 665–673.",
+        "He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. Proceedings of IEEE CVPR, 770–778.",
         "Piosenka, G. (2023). BIRDS 525 species – Image classification [Data set]. Kaggle. Mirror: https://huggingface.co/datasets/chriamue/bird-species-dataset (CC0 1.0).",
-        "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). \"Why should I trust you?\": Explaining the predictions of any classifier. Proceedings of ACM SIGKDD, 1135–1144.",
         "Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted residuals and linear bottlenecks. Proceedings of IEEE CVPR, 4510–4520.",
         "Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2017). Grad-CAM: Visual explanations from deep networks via gradient-based localization. Proceedings of IEEE ICCV, 618–626.",
-        "Wah, C., Branson, S., Welinder, P., Perona, P., & Belongie, S. (2011). The Caltech-UCSD Birds-200-2011 dataset (Tech. Rep. CNS-TR-2011-001). California Institute of Technology.",
         "Our code and notebooks: https://github.com/Mateen1367/BIRDS-PROJECT"]
-text(s, 0.6, 1.9, 12.1, 5.0, refs, size=12, after=7, label="refs")
-notes(s, 20)
+text(s, 0.6, 1.9, 12.1, 5.0, refs, size=13, after=9, label="refs")
+notes(s, 16)
 
-# 21 Questions
+# 17 Questions ------------------------------------------------------------------------------------
 s = new_slide(dark=True)
 text(s, 0.8, 1.7, 6.8, 1.2, ["Thank you"], size=54, bold=True, color=WHITE, face=HEAD, label="ty")
 text(s, 0.8, 2.95, 6.8, 0.8, ["Questions?"], size=34, color=SKY, face=HEAD, label="q")
@@ -815,23 +691,25 @@ text(s, 0.8, 5.5, 6.8, 1.0, ["Mateen Jan  ·  Tej Govindu  ·  Alejandro Alfonso
 for i, sp in enumerate(["Northern Mockingbird", "Common Grackle", "Mourning Dove", "Red Shouldered Hawk"]):
     px_, py_ = 8.3 + (i % 2) * 2.3, 1.0 + (i // 2) * 2.75
     picture(s, THUMB[sp], px_, py_, w=2.1, h=2.1, border=WHITE)
-    text(s, px_, py_ + 2.17, 2.1, 0.35, [sp.replace("Red Shouldered", "Red-shouldered")], size=12, color=SKY, italic=True,
-         align=PP_ALIGN.CENTER, label="qcap " + sp)
-notes(s, 21)
+    text(s, px_, py_ + 2.17, 2.1, 0.35, [nice(sp)], size=12, color=SKY, italic=True, align=PP_ALIGN.CENTER, label="qcap " + sp)
+notes(s, 17)
 
 # ---------------------------------------------------------------- backup slides
 s = new_slide()
-header(s, "Backup", "Every species improved; the hawks and black birds stay hardest", 22)
-pc = R["per_class_test_f1"]
-order = sorted(pc, key=lambda k: pc[k]["final F1"])
-cluster_chart(s, 0.6, 1.9, 12.1, 5.0, order, [("Baseline CNN", [pc[k]["baseline F1"] for k in order], BROWN),
-                                             ("Final model", [pc[k]["final F1"] for k in order], BLUE)])
-s.notes_slide.notes_text_frame.text = "[BACKUP] Per-species test F1, baseline vs. final model. Use if asked which birds are hardest."
+header(s, "Backup", "Fine-tuning grid (validation only): no setting beat the frozen model", 18)
+rows_b = [["Unfrozen top layers", "Learning rate", "Validation F1", "Epochs run"]]
+for g in sorted(R["tuning_grid"], key=lambda g: (g["unfrozen layers"], g["learning rate"])):
+    rows_b.append([str(g["unfrozen layers"]), g["learning rate"].replace("e-05", "e-5"), f"{g['val F1']:.3f}", str(g["epochs"])])
+rows_b.append(["Frozen (feature extraction)", "0.001 (new layer only)", f"{V['3b. MobileNetV2 frozen, no augmentation']['F1']:.3f}", "15"])
+table(s, 0.6, 1.95, rows_b, col_w=[3.4, 2.8, 2.2, 2.0], row_h=0.55, size=15, highlight=len(rows_b) - 1)
+text(s, 0.6, 5.5, 12.1, 0.9, ["Early stopping ended every fine-tuning run after 4 epochs: validation loss rose right away. With ~1,200 photos, unfreezing 1.5 million weights mostly memorizes."],
+     size=14, color=MUTED, label="bk1")
+s.notes_slide.notes_text_frame.text = "[BACKUP] Fine-tuning grid. Use if asked about tuning or fine-tuning."
 
 s = new_slide()
-header(s, "Backup", "Training curves: the from-scratch CNNs were still learning at the epoch limit", 23)
-fit_picture(s, FIG / "training_curves.png", 0.6, 1.9, 12.1, 4.9)
-s.notes_slide.notes_text_frame.text = "[BACKUP] Train vs. validation accuracy per epoch. Use if asked about overfitting or why augmentation hurt."
+header(s, "Backup", "Training curves for all three models", 19)
+fit_picture(s, FIG / "training_curves.png", 0.6, 1.85, 12.1, 5.0)
+s.notes_slide.notes_text_frame.text = "[BACKUP] Accuracy and loss per epoch for the baseline, MobileNetV2 and ResNet50."
 
 out = "reports/WhichTexasBird_Presentation.pptx"
 prs.save(out)

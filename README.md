@@ -77,6 +77,7 @@ Raw images → Data understanding → Minimum preprocessing → Train/val/test s
 | 2 | Simple CNN + augmentation | Random flips, rotation, zoom, contrast |
 | 3 | MobileNetV2 transfer learning | Pretrained ImageNet features, new 10-class output layer |
 | 3b | MobileNetV2, no augmentation | Check whether augmentation helps the pretrained model |
+| 3c | ResNet50, no augmentation | Second transfer learning model (feature extraction) |
 | 4 | MobileNetV2 fine-tuned | Top layers unfrozen, small learning rate |
 | 5 | Tuned model | Learning rate / dropout / layers unfrozen chosen on **validation only** |
 
@@ -103,8 +104,8 @@ birds-project/
 │   └── build_scripts.py              # builds the speaker-script PDF and Word file
 ├── models/                  # saved final model (not in git; recreated by notebook 2)
 ├── reports/
-│   ├── WhichTexasBird_Presentation.pptx      # 21 slides + 2 backup, with speaker notes
-│   ├── WhichTexasBird_Speaker_Scripts.pdf    # Say / Why / If-asked for each speaker
+│   ├── WhichTexasBird_Presentation.pptx      # 17 slides + 2 backup, with speaker notes
+│   ├── WhichTexasBird_Speaker_Scripts.pdf    # big picture + Say / What it means / Possible questions
 │   ├── WhichTexasBird_Speaker_Scripts.docx   # same, editable
 │   ├── results.json         # every number used in the slides
 │   └── figures/             # charts used in the slides
@@ -120,7 +121,7 @@ birds-project/
 pip install -r requirements.txt
 bash src/download_data.sh          # ~2 GB stream, keeps ~48 MB of images
 ```
-Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_modeling_and_evaluation.ipynb` (about 25 minutes on a laptop CPU; the notebook limits TensorFlow to 4 threads).
+Then run `notebooks/01_data_and_preprocessing.ipynb` followed by `notebooks/02_modeling_and_evaluation.ipynb` (about 35 minutes on a laptop CPU; the notebook limits TensorFlow to 4 threads).
 
 To rebuild the slides and scripts after rerunning the notebooks: `python src/build_deck.py` and `python src/build_scripts.py`.
 
@@ -130,27 +131,24 @@ To rebuild the slides and scripts after rerunning the notebooks: `python src/bui
 
 ## 6. Results
 
-### Every step, scored the same way (macro F1)
+### Main models (test set: 257 photos the models never trained on)
 
-| Step | Model | Validation F1 | Test F1 | Test accuracy |
-|---|---|---|---|---|
-| 0 | Majority-class guess | 0.022 | 0.022 | 12.5% |
-| 1 | **Baseline:** simple CNN (minimum preprocessing) | 0.608 | 0.679 | 68.5% |
-| 2 | Simple CNN + augmentation | 0.558 ⬇ | 0.559 | 55.6% |
-| 3 | MobileNetV2 frozen (transfer learning) + augmentation | 0.956 | 0.936 | 93.4% |
-| **3b** | **MobileNetV2 frozen, no augmentation (final model)** | **0.964** | **0.964** | **96.1%** |
-| 4 | Fine-tuned, top 30 layers, lr 1e-5 (default) | 0.960 | 0.955 | 95.3% |
-| 5 | Tuned (2×2 grid on validation): best = default | 0.960 | 0.955 | 95.3% |
+| Model | How it was used | Trained weights | Val. macro F1 | Test accuracy | Test loss | Test macro F1 | Mistakes |
+|---|---|---|---|---|---|---|---|
+| Majority-class guess | — | 0 | 0.022 | 12.5% | — | 0.022 | 225 |
+| **Baseline CNN** | Trained from scratch | 242,122 | 0.608 | 68.5% | 0.857 | 0.679 | 81 |
+| **MobileNetV2** | Transfer learning, feature extraction (frozen) | 12,810 | 0.964 | 96.1% | 0.118 | 0.964 | 10 |
+| **ResNet50** | Transfer learning, feature extraction (frozen) | 20,490 | 0.965 | **98.1%** | **0.095** | **0.982** | **5** |
 
-The final model was chosen by **validation** macro F1 only; test scores are reported, not used to choose.
+Other things we tested (validation macro F1): baseline CNN + augmentation 0.558 (worse), MobileNetV2 + augmentation 0.956, MobileNetV2 fine-tuned (best of a 2×2 grid) 0.959. Neither augmentation nor fine-tuning beat the frozen models.
 
 ### Key findings
-1. **Transfer learning made the difference:** 0.608 → 0.964 validation F1 while training only 12,810 weights.
-2. **Steps that did not help:** augmentation (both models) and fine-tuning/tuning. With ~120 clean, centered photos per bird, extra randomness and extra flexibility didn't pay off.
-3. **All 10 test mistakes are inside the lookalike pairs:** 5 hawk, 4 crow/grackle, 1 dove; 7 of the 10 had confidence under 65%.
-4. **Grad-CAM:** the model mostly looks at the bird's body, not the sky background (the border gets only 17–34% of the heatmap weight vs. 49% of the area).
+1. **Transfer learning made the difference:** both pretrained models beat our from-scratch CNN by about 28–30 accuracy points.
+2. **Strongest model: ResNet50** (98.1% test accuracy). On validation the two pretrained models tied (0.964 vs. 0.965); ResNet50 pulled ahead on the test set. MobileNetV2 is ~10× smaller and ~4× faster to train.
+3. **Mistakes are lookalikes:** MobileNetV2's 10 test errors are all inside the hawk, crow/grackle and dove pairs; ResNet50's 5 are 2 hawk, 2 crow/grackle and 1 roadrunner/mockingbird.
+4. **Grad-CAM:** the model looks at the bird's body, not the sky (the image border gets 17–34% of the heatmap vs. 49% of the area).
 
-![Confusion matrix](reports/figures/confusion_matrix.png)
+![Confusion matrices](reports/figures/confusion_matrices_all.png)
 
 ### Limitations
 - Small dataset (~120 training photos per species) of clean, cropped, mostly web-sourced photos; results won't transfer directly to blurry backyard or camera-trap photos.
@@ -161,6 +159,7 @@ The final model was chosen by **validation** macro F1 only; test scores are repo
 ## 7. References
 
 - Piosenka, G. (2023). *BIRDS 525 Species – Image Classification* [Data set]. Kaggle. Mirror: https://huggingface.co/datasets/chriamue/bird-species-dataset (CC0 1.0).
+- He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. *CVPR*.
 - Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted residuals and linear bottlenecks. *CVPR*.
 - Geirhos, R., et al. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence, 2*(11), 665–673.
 - Selvaraju, R. R., et al. (2017). Grad-CAM: Visual explanations from deep networks via gradient-based localization. *ICCV*.
